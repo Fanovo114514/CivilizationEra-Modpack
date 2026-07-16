@@ -51,6 +51,15 @@ public enum Era {
         return PRIMITIVE_WILDERNESS;
     }
 
+    public static Era getByName(String name) {
+        for (Era era : values()) {
+            if (era.name.equalsIgnoreCase(name) || era.name().equalsIgnoreCase(name)) {
+                return era;
+            }
+        }
+        return PRIMITIVE_WILDERNESS;
+    }
+
     public static Era getNext(Era current) {
         int nextIndex = current.index + 1;
         if (nextIndex < values().length) {

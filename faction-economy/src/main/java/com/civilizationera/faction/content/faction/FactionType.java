@@ -1,8 +1,5 @@
 package com.civilizationera.faction.content.faction;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public enum FactionType {
     FARMERS_ALLIANCE("farmers_alliance", "农庄联盟", FactionAlignment.FRIENDLY, "农业/友善"),
     MINERS_GUILD("miners_guild", "矿业公会", FactionAlignment.NEUTRAL, "采矿/中立"),

@@ -12,6 +12,7 @@ public class FactionManager {
     private static FactionManager instance;
     private final Map<FactionType, Integer> reputation = new EnumMap<>(FactionType.class);
     private final Set<Set<FactionType>> opposingPairs = new HashSet<>();
+    private final List<ReputationLevel> reputationLevels = new ArrayList<>();
     private final FactionConfig config;
 
     public static void init() {
@@ -28,6 +29,7 @@ public class FactionManager {
             reputation.put(faction, 0);
         }
         loadOpposingFactions();
+        loadReputationLevels();
     }
 
     private FactionConfig loadConfig() {
@@ -65,6 +67,34 @@ public class FactionManager {
         opposingPairs.add(EnumSet.of(FactionType.ACADEMY, FactionType.UNDERGROUND_MARKET));
     }
 
+    private void loadReputationLevels() {
+        try {
+            InputStream is = getClass().getResourceAsStream("/assets/faction_economy/config/faction_relations.json");
+            if (is != null) {
+                JsonObject json = new Gson().fromJson(new InputStreamReader(is), JsonObject.class);
+                JsonArray levels = json.getAsJsonArray("reputation_levels");
+                for (int i = 0; i < levels.size(); i++) {
+                    JsonObject level = levels.get(i).getAsJsonObject();
+                    reputationLevels.add(new ReputationLevel(
+                        level.get("level").getAsString(),
+                        level.get("threshold").getAsInt(),
+                        level.get("display_name").getAsString()
+                    ));
+                }
+                reputationLevels.sort(Comparator.comparingInt(l -> l.threshold));
+                return;
+            }
+        } catch (Exception ignored) {}
+        reputationLevels.add(new ReputationLevel("HATED", -60, "仇恨"));
+        reputationLevels.add(new ReputationLevel("HOSTILE", -40, "敌对"));
+        reputationLevels.add(new ReputationLevel("UNFRIENDLY", -20, "冷淡"));
+        reputationLevels.add(new ReputationLevel("NEUTRAL", 0, "中立"));
+        reputationLevels.add(new ReputationLevel("FRIENDLY", 20, "友好"));
+        reputationLevels.add(new ReputationLevel("LIKED", 40, "友善"));
+        reputationLevels.add(new ReputationLevel("HONORED", 60, "尊敬"));
+        reputationLevels.add(new ReputationLevel("EXALTED", 80, "崇拜"));
+    }
+
     public int getReputation(FactionType faction) {
         return reputation.getOrDefault(faction, 0);
     }
@@ -90,35 +120,36 @@ public class FactionManager {
 
     public ReputationLevel getReputationLevel(FactionType faction) {
         int rep = getReputation(faction);
-        ReputationLevel[] levels = ReputationLevel.values();
-        for (int i = levels.length - 1; i >= 0; i--) {
-            if (rep >= levels[i].threshold) {
-                return levels[i];
+        ReputationLevel result = reputationLevels.get(0);
+        for (ReputationLevel level : reputationLevels) {
+            if (rep >= level.threshold) {
+                result = level;
             }
         }
-        return ReputationLevel.HATED;
+        return result;
+    }
+
+    public List<ReputationLevel> getReputationLevels() {
+        return Collections.unmodifiableList(reputationLevels);
     }
 
     public FactionConfig getConfig() {
         return config;
     }
 
-    public enum ReputationLevel {
-        EXALTED(80, "崇拜"),
-        HONORED(60, "尊敬"),
-        LIKED(40, "友善"),
-        FRIENDLY(20, "友好"),
-        NEUTRAL(0, "中立"),
-        UNFRIENDLY(-20, "冷淡"),
-        HOSTILE(-40, "敌对"),
-        HATED(-60, "仇恨");
+    public static class ReputationLevel {
+        public final String name;
+        public final int threshold;
+        public final String displayName;
 
-        private final int threshold;
-        private final String displayName;
-
-        ReputationLevel(int threshold, String displayName) {
+        public ReputationLevel(String name, int threshold, String displayName) {
+            this.name = name;
             this.threshold = threshold;
             this.displayName = displayName;
+        }
+
+        public String getName() {
+            return name;
         }
 
         public int getThreshold() {

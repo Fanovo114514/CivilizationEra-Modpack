@@ -2,8 +2,15 @@ package com.civilizationera.tech.content.research;
 
 import com.civilizationera.core.content.era.Era;
 import com.civilizationera.faction.content.faction.FactionType;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ResearchManager {
     private static ResearchManager instance;
@@ -12,25 +19,44 @@ public class ResearchManager {
 
     public static void init() {
         instance = new ResearchManager();
-        instance.registerDefaultTechs();
+        instance.loadTechTree();
     }
 
     public static ResearchManager getInstance() {
         return instance;
     }
 
-    private void registerDefaultTechs() {
+    private void loadTechTree() {
+        try {
+            InputStream is = getClass().getResourceAsStream("/assets/tech_research/config/tech_tree.json");
+            if (is != null) {
+                JsonObject json = new Gson().fromJson(new InputStreamReader(is), JsonObject.class);
+                JsonArray techs = json.getAsJsonArray("techs");
+                for (JsonElement elem : techs) {
+                    JsonObject tech = elem.getAsJsonObject();
+                    String id = tech.get("id").getAsString();
+                    String displayName = tech.get("display_name").getAsString();
+                    Era era = Era.getByName(tech.get("era").getAsString());
+                    int fragmentCost = tech.get("fragment_cost").getAsInt();
+                    List<String> prerequisites = new ArrayList<>();
+                    if (tech.has("prerequisites")) {
+                        for (JsonElement pre : tech.getAsJsonArray("prerequisites")) {
+                            prerequisites.add(pre.getAsString());
+                        }
+                    }
+                    FactionType faction = null;
+                    if (tech.has("faction") && !tech.get("faction").isJsonNull()) {
+                        faction = FactionType.valueOf(tech.get("faction").getAsString().toUpperCase());
+                    }
+                    String description = tech.has("description") ? tech.get("description").getAsString() : "";
+                    registerTech(new TechNode(id, displayName, era, fragmentCost, prerequisites, faction, description));
+                }
+                return;
+            }
+        } catch (Exception ignored) {}
         registerTech(new TechNode("basic_fire", "基础生火", Era.PRIMITIVE_WILDERNESS, 1, Collections.emptyList(), FactionType.FARMERS_ALLIANCE));
         registerTech(new TechNode("wooden_tools", "木制工具", Era.PRIMITIVE, 3, List.of("basic_fire"), null));
         registerTech(new TechNode("primitive_smelting", "原始冶炼", Era.PRIMITIVE, 5, List.of("wooden_tools"), null));
-        registerTech(new TechNode("basic_farming", "基础农耕", Era.AGRICULTURAL, 5, List.of("primitive_smelting"), FactionType.FARMERS_ALLIANCE));
-        registerTech(new TechNode("copper_smelting", "铜器冶炼", Era.AGRICULTURAL, 8, List.of("basic_farming"), FactionType.MINERS_GUILD));
-        registerTech(new TechNode("bronze_smithing", "青铜锻造", Era.AGRICULTURAL, 12, List.of("copper_smelting"), FactionType.MINERS_GUILD));
-        registerTech(new TechNode("iron_smelting", "铁器冶炼", Era.IRON, 15, List.of("bronze_smithing"), FactionType.INDUSTRIAL_CONSORTIUM));
-        registerTech(new TechNode("steam_power", "蒸汽动力", Era.STEAM, 30, List.of("iron_smelting"), FactionType.INDUSTRIAL_CONSORTIUM));
-        registerTech(new TechNode("electricity_basics", "电力基础", Era.ELECTRIC, 50, List.of("steam_power"), FactionType.ACADEMY));
-        registerTech(new TechNode("computing", "计算技术", Era.INFORMATION, 80, List.of("electricity_basics"), FactionType.ACADEMY));
-        registerTech(new TechNode("rocket_science", "火箭科学", Era.INTERSTELLAR, 150, List.of("computing"), FactionType.INDUSTRIAL_CONSORTIUM));
     }
 
     public void registerTech(TechNode tech) {
@@ -75,13 +101,9 @@ public class ResearchManager {
     }
 
     public List<TechNode> getAvailableTechs(Era era) {
-        List<TechNode> available = new ArrayList<>();
-        for (TechNode tech : techTree.values()) {
-            if (tech.getEra().getIndex() <= era.getIndex() && canResearch(tech.getId())) {
-                available.add(tech);
-            }
-        }
-        return available;
+        return techTree.values().stream()
+                .filter(tech -> tech.getEra().getIndex() <= era.getIndex() && canResearch(tech.getId()))
+                .collect(Collectors.toList());
     }
 
     public static class TechNode {

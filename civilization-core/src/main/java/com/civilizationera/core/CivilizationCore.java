@@ -1,7 +1,6 @@
 package com.civilizationera.core;
 
 import com.civilizationera.core.content.item.AllItems;
-import com.civilizationera.core.foundation.capability.CapabilityHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -18,9 +17,6 @@ public class CivilizationCore {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         AllItems.register(modEventBus);
-
-        modEventBus.addListener(CapabilityHandler::registerCapabilities);
-        MinecraftForge.EVENT_BUS.register(new CapabilityHandler());
 
         MinecraftForge.EVENT_BUS.register(this);
     }

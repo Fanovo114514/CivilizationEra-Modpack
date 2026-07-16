@@ -108,20 +108,23 @@ PlayerEvents.loggedIn(event => {
   }
 })
 
-ItemEvents.entityInteracted(event => {
-  let entity = event.target
-  let player = event.player
+EntityEvents.death(event => {
+  let entity = event.entity
+  let source = event.source
+  let killer = source.actual
+
+  if (!killer || !killer.player) return
+
+  let player = killer
 
   if (entity.type === 'minecraft:zombie' || entity.type === 'minecraft:skeleton' ||
       entity.type === 'minecraft:spider' || entity.type === 'minecraft:creeper') {
-    if (!entity.isAlive()) {
-      let currentEra = player.persistentData.getInt('civilization_era') || 0
-      let fragmentAmount = 1 + currentEra
+    let currentEra = player.persistentData.getInt('civilization_era') || 0
+    let fragmentAmount = 1 + currentEra
 
-      let currentFragments = player.persistentData.getInt('evolution_fragments') || 0
-      player.persistentData.putInt('evolution_fragments', currentFragments + fragmentAmount)
+    let currentFragments = player.persistentData.getInt('evolution_fragments') || 0
+    player.persistentData.putInt('evolution_fragments', currentFragments + fragmentAmount)
 
-      player.tell(Text.of(`获得 ${fragmentAmount} 个进化碎片`).aqua())
-    }
+    player.tell(Text.of(`获得 ${fragmentAmount} 个进化碎片`).aqua())
   }
 })

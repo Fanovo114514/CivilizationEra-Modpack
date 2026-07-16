@@ -30,7 +30,6 @@ subprojects {
 
     minecraft {
         mappings channel: 'parchment', version: "${parchment_mc_version}-${parchment_version}"
-        accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
         runs {
             client {
