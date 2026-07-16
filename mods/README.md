@@ -16,21 +16,23 @@
 
 ## 📋 完整模组列表
 
-### 🔧 基础框架层（11个）
+### 🔧 基础框架层（13个）
 
 | 序号 | 模组名称 | 英文名 | 版本要求 | 下载链接 | 说明 |
 |------|----------|--------|----------|----------|------|
-| 1 | FTB 任务 | FTB Quests | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/ftb-quests) | 任务系统核心，八纪元任务链 |
-| 2 | FTB任务UI美化 | FTB Quests UI Overhaul | 1.20.1-最新 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ftb-quests-ui-overhaul) | 任务界面美化 |
-| 3 | JEI | Just Enough Items | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/jei) | 配方查看器，配合时代锁使用 |
-| 4 | Jade | Jade | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/jade) | 方块/实体信息HUD显示 |
-| 5 | KubeJS | KubeJS | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/kubejs) | 配方脚本修改，实现时代锁 |
-| 6 | 布料配置 | Cloth Config | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/cloth-config) | 配置界面库（多模组前置） |
-| 7 | 小地图 | Xaero's Minimap | 1.20.1-最新 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap) | 小地图 |
-| 8 | 世界地图 | Xaero's World Map | 1.20.1-最新 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/xaeros-world-map) | 世界地图 |
-| 9 | 物品栏整理 | Inventory Profiles Next | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/inventory-profiles-next) | 物品栏管理、一键整理 |
-| 10 | 按键管理 | Controlling | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/controlling) | 按键绑定管理 |
-| 11 | 鼠标增强 | Mouse Tweaks | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/mouse-tweaks) | 鼠标物品操作增强 |
+| 1 | FTB 任务 | FTB Quests | 1.20.1-最新 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ftb-quests) | 任务系统核心，八纪元任务链 |
+| 2 | FTB 库 | FTB Library | 1.20.1-最新 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ftb-library-forge) | FTB 系列模组前置库 |
+| 3 | FTB 团队架构 | FTB Team Architectury | 1.20.1-最新 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ftb-architectury) | FTB 系列团队系统前置 |
+| 4 | FTB任务UI美化 | FTB Quests UI Overhaul | 1.20.1-最新 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ftb-quests-ui-overhaul) | 任务界面美化 |
+| 5 | JEI | Just Enough Items | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/jei) | 配方查看器，配合时代锁使用 |
+| 6 | Jade | Jade | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/jade) | 方块/实体信息HUD显示 |
+| 7 | KubeJS | KubeJS | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/kubejs) | 配方脚本修改，实现时代锁 |
+| 8 | 布料配置 | Cloth Config | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/cloth-config) | 配置界面库（多模组前置） |
+| 9 | 小地图 | Xaero's Minimap | 1.20.1-最新 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap) | 小地图 |
+| 10 | 世界地图 | Xaero's World Map | 1.20.1-最新 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/xaeros-world-map) | 世界地图 |
+| 11 | 物品栏整理 | Inventory Profiles Next | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/inventory-profiles-next) | 物品栏管理、一键整理 |
+| 12 | 按键管理 | Controlling | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/controlling) | 按键绑定管理 |
+| 13 | 鼠标增强 | Mouse Tweaks | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/mouse-tweaks) | 鼠标物品操作增强 |
 
 ### ⚡ 优化层（4个）
 
@@ -126,14 +128,17 @@
 | 54 | 地壳生成 | Tectonic | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/tectonic) | 地壳生成增强 |
 | 55 | 脚步声 | Presence Footsteps | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/presence-footsteps) | 脚步声增强 |
 | 56 | 声音物理 | Sound Physics Remastered | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/sound-physics-remastered) | 声音物理模拟 |
-| 57 | 环境音效 | Ambient Sounds | 1.20.1-最新 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ambient-sounds) | 环境音效增强 |
+| 57 | 环境音效 | Ambient Sounds Mod | 1.20.1-最新 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ambient-sounds-mod) | 环境音效增强（可选，若链接失效可在CurseForge搜索"Ambient Sounds"） |
 
 ### 🏛️ 经济/势力辅助（2个）
 
+> ⚠️ **注意**：经济和势力系统已集成到自创模组「势力与经济」中，无需额外下载第三方模组。
+> 以下模组仅作参考，如需额外功能可选择安装：
+
 | 序号 | 模组名称 | 英文名 | 版本要求 | 下载链接 | 说明 |
 |------|----------|--------|----------|----------|------|
-| 58 | M经济 | M Economy | 1.20.1-最新 | [Spigot](https://www.spigotmc.org/resources/m-economy.xxxxx/) | 完整经济系统（纸币/ATM/商店） |
-| 59 | 势力 | Factions Proper | 1.20.1-最新 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/factions-proper) | 势力/阵营（领地/外交） |
+| 58 | 经济系统（可选） | 已集成到自创模组 | - | - | 货币系统、ATM、商店等功能已在「势力与经济」模组中实现 |
+| 59 | 势力系统（可选） | 已集成到自创模组 | - | - | 六大势力、声望、外交等功能已在「势力与经济」模组中实现 |
 
 ### 🔧 前置模组（重要！）
 
@@ -141,13 +146,18 @@
 
 | 前置模组 | 被哪些模组依赖 | 下载链接 |
 |----------|----------------|----------|
-| BCLib | BetterEnd Forge | [Modrinth](https://modrinth.com/mod/bclib) |
-| WunderLib | BetterEnd Forge | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/wunderlib) |
+| FTB Library | FTB Quests | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ftb-library-forge) |
+| FTB Team Architectury | FTB Quests | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ftb-architectury) |
+| BCLib (NeoForge版) | BetterEnd Forge | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/bclib-neoforge) |
+| WunderLib / WorldWeaver | BetterEnd Forge | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/worldweaver-neoforge) |
+| GeckoLib | Alex's Mobs, Mowzie's Mobs | [Modrinth](https://modrinth.com/mod/geckolib) |
+| Puzzles Lib | Mutant Monsters | [Modrinth](https://modrinth.com/mod/puzzles-lib) |
 | Bookshelf | 部分模组 | [Modrinth](https://modrinth.com/mod/bookshelf-lib) |
 | Architectury API | 部分模组 | [Modrinth](https://modrinth.com/mod/architectury-api) |
 | Patchouli | 部分模组（指南书） | [Modrinth](https://modrinth.com/mod/patchouli) |
 | Curios API | 部分模组（饰品栏） | [Modrinth](https://modrinth.com/mod/curios) |
-| GeckoLib | 动画类模组 | [Modrinth](https://modrinth.com/mod/geckolib) |
+| Cloth Config | 多数模组配置界面 | [Modrinth](https://modrinth.com/mod/cloth-config) |
+| Kotlin for Forge | Logistic Pipes 2 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/kotlin-for-forge) |
 
 ---
 
@@ -199,4 +209,10 @@
 
 ## 📝 更新日志
 
-- v1.0.0 - 初始版本，包含 59 个第三方模组 + 4 个自创模组
+- v1.0.1 - 修复失效链接：
+  - FTB Quests 改用 CurseForge 链接（Modrinth 上不存在）
+  - 添加 FTB Library 和 FTB Team Architectury 前置
+  - 修正 BCLib 和 WunderLib 为 NeoForge/Forge 版本
+  - 经济/势力系统改为集成到自创模组
+  - 补充更多前置模组说明
+- v1.0.0 - 初始版本，包含 57 个第三方模组 + 4 个自创模组
