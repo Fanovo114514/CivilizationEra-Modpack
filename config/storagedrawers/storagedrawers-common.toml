@@ -1,0 +1,51 @@
+# ============================================================
+# Storage Drawers 抽屉存储配置
+# ============================================================
+
+[general]
+	# 抽屉基础容量倍率
+	# 范围: 0.5-10
+	capacityMultiplier = 1.0
+
+	# 1x1 抽屉基础容量
+	# 范围: 1-1024
+	base1x1 = 256
+
+	# 1x2 抽屉基础容量
+	# 范围: 1-1024
+	base1x2 = 128
+
+	# 2x2 抽屉基础容量
+	# 范围: 1-1024
+	base2x2 = 64
+
+	# 4x4 抽屉基础容量
+	# 范围: 1-1024
+	base4x4 = 32
+
+[upgrades]
+	# 升级倍率1（铁）
+	# 范围: 1-100
+	upgrade1Multiplier = 2
+
+	# 升级倍率2（金）
+	# 范围: 1-100
+	upgrade2Multiplier = 4
+
+	# 升级倍率3（钻石）
+	# 范围: 1-100
+	upgrade3Multiplier = 8
+
+	# 升级倍率4（下界之星）
+	# 范围: 1-100
+	upgrade4Multiplier = 16
+
+[balance]
+	# 抽屉是否可以被推动
+	pushable = true
+
+	# 潜行右键打开UI
+	sneakForUI = true
+
+	# 允许无限升级
+	infiniteUpgrades = false

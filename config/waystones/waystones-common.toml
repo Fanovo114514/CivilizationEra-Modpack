@@ -1,0 +1,59 @@
+# ============================================================
+# Waystones 传送石配置
+# ============================================================
+
+[general]
+	# 传送石是否需要经验
+	# 范围: 0-3
+	# 0 = 免费, 1 = 按距离, 2 = 固定消耗, 3 = 物品消耗
+	xpCost = 1
+
+	# 基础经验消耗
+	# 范围: 0-100
+	baseXpCost = 3
+
+	# 每格距离额外消耗经验
+	# 范围: 0-1
+	xpCostPerDistance = 0.001
+
+	# 最大传送距离
+	# 范围: 100-10000
+	maxTeleportDistance = 5000
+
+	# 是否允许在不同维度传送
+	allowInterDimension = true
+
+	# 跨维度传送经验消耗倍率
+	# 范围: 1-10
+	interDimensionXpMultiplier = 5
+
+	# 传送冷却时间（秒）
+	# 范围: 0-60
+	teleportCooldown = 5
+
+	# 传送时播放音效
+	playSound = true
+
+	# 传送时显示粒子效果
+	showParticles = true
+
+[worldgen]
+	# 村庄生成传送石
+	generateInVillages = true
+
+	# 传送石在村庄生成概率
+	# 范围: 0-1
+	villageSpawnChance = 0.5
+
+	# 生成可激活的传送石
+	generateActivated = false
+
+[balance]
+	# 传送石配方是否需要下界之星
+	expensiveRecipe = false
+
+	# 可潜行右键重新命名
+	allowRenaming = true
+
+	# 潜行右键可破坏
+	allowSneakBreak = true

@@ -1,0 +1,40 @@
+# ============================================================
+# Iron Furnaces 多级熔炉配置
+# ============================================================
+
+[general]
+	# 铁熔炉速度倍率
+	# 范围: 1-10
+	ironFurnaceSpeed = 2.0
+
+	# 金熔炉速度倍率
+	# 范围: 1-10
+	goldFurnaceSpeed = 3.0
+
+	# 钻石熔炉速度倍率
+	# 范围: 1-10
+	diamondFurnaceSpeed = 4.0
+
+	# 黑曜石熔炉速度倍率
+	# 范围: 1-10
+	obsidianFurnaceSpeed = 5.0
+
+	# 下界合金熔炉速度倍率
+	# 范围: 1-10
+	netheriteFurnaceSpeed = 6.0
+
+	# 燃料效率倍率
+	# 范围: 0.5-3.0
+	fuelEfficiency = 1.5
+
+[upgrades]
+	# 启用熔炉升级
+	enableUpgrades = true
+
+	# 升级需要的材料数量
+	# 范围: 1-16
+	upgradeMaterialCount = 8
+
+[worldgen]
+	# 生成黑曜石熔炉
+	generateObsidianFurnace = false

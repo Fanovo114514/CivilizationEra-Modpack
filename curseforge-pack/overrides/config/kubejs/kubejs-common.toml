@@ -1,0 +1,41 @@
+# ============================================================
+# KubeJS 配置
+# ============================================================
+
+[general]
+	# 启用服务器脚本
+	enableServerScripts = true
+
+	# 启用客户端脚本
+	enableClientScripts = true
+
+	# 启用启动脚本
+	enableStartupScripts = true
+
+	# 脚本错误时是否输出完整堆栈
+	printFullErrorStacks = true
+
+	# 脚本热重载
+	allowScriptHotReload = true
+
+	# 数据包包名
+	packName = "Civilization Era"
+
+[server]
+	# 服务器脚本路径
+	serverScriptPath = "kubejs/server_scripts"
+
+	# 启动脚本路径
+	startupScriptPath = "kubejs/startup_scripts"
+
+[client]
+	# 客户端脚本路径
+	clientScriptPath = "kubejs/client_scripts"
+
+[advanced]
+	# 禁用内置脚本
+	disableBuiltinScripts = false
+
+	# 最大正则表达式回溯
+	# 范围: 1000-100000
+	maxRegexBacktrack = 10000

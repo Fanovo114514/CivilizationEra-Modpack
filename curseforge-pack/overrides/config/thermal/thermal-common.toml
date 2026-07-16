@@ -1,0 +1,36 @@
+# ============================================================
+# Thermal Expansion 热力膨胀配置
+# ============================================================
+
+[general]
+	# RF 能量倍率
+	# 范围: 0.5-4.0
+	energyMultiplier = 1.0
+
+	# 机器速度倍率
+	# 范围: 0.5-4.0
+	speedMultiplier = 1.0
+
+[worldgen]
+	# 生成铜矿
+	generateCopper = true
+	# 生成锡矿
+	generateTin = true
+	# 生成银矿
+	generateSilver = true
+	# 生成铅矿
+	generateLead = true
+	# 生成镍矿
+	generateNickel = true
+	# 生成铂矿
+	generatePlatinum = false
+	# 生成铱矿
+	generateIridium = false
+	# 生成硫磺
+	generateSulfur = true
+	# 生成硝石
+	generateNiter = true
+
+[devices]
+	# 启用所有设备
+	enableAllDevices = true

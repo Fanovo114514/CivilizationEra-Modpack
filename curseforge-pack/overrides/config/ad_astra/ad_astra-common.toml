@@ -1,0 +1,44 @@
+# ============================================================
+# Ad Astra 星际探索配置
+# ============================================================
+
+[general]
+	# 火箭燃料消耗倍率
+	# 范围: 0.5-3.0
+	fuelConsumptionMultiplier = 1.0
+
+	# 太空服氧气消耗倍率
+	# 范围: 0.5-3.0
+	oxygenConsumptionMultiplier = 1.0
+
+[dimensions]
+	# 启用月球
+	enableMoon = true
+	# 启用火星
+	enableMars = true
+	# 启用金星
+	enableVenus = true
+	# 启用水星
+	enableMercury = true
+	# 启用小行星带
+	enableAsteroidBelt = true
+	# 启用格利泽
+	enableGliese = true
+
+[worldgen]
+	# 月球矿石生成
+	moonOres = true
+	# 火星矿石生成
+	marsOres = true
+	# 小行星带矿石生成
+	asteroidOres = true
+
+[rockets]
+	# 铁制火箭最大层级
+	ironRocketMaxTier = 1
+	# 钢制火箭最大层级
+	steelRocketMaxTier = 2
+	# 戴斯合金火箭最大层级
+	deshRocketMaxTier = 3
+	# 钛钢火箭最大层级
+	titaniumRocketMaxTier = 4

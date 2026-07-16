@@ -1,0 +1,34 @@
+# ============================================================
+# Terralith 世界生成配置
+# ============================================================
+
+[worldgen]
+	# 设置世界生成的生物群系规模
+	# 范围: 1-8
+	biome_size = 4
+
+	# 启用/禁用洞穴生物群系
+	enable_cave_biomes = true
+
+	# 启用/禁用地下层
+	enable_underground_layers = true
+
+	# 山脉高度调整
+	# 范围: 0.5-2.0
+	mountain_height = 1.2
+
+	# 火山生成概率
+	# 范围: 0-1
+	volcano_chance = 0.1
+
+[structures]
+	# 启用自定义结构
+	enable_custom_structures = true
+
+	# 结构生成密度
+	# 范围: 0.5-2.0
+	structure_density = 1.0
+
+[biomes]
+	# 启用所有生物群系
+	enable_all_biomes = true

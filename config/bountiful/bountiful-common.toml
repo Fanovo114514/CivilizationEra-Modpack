@@ -1,0 +1,45 @@
+# ============================================================
+# Bountiful 悬赏任务配置
+# ============================================================
+
+[general]
+	# 悬赏板生成概率
+	# 范围: 0-1
+	boardSpawnChance = 0.7
+
+	# 每个悬赏板默认悬赏数量
+	# 范围: 1-10
+	initialBounties = 3
+
+	# 悬赏刷新时间（分钟）
+	# 范围: 5-120
+	bountyRefreshTime = 30
+
+	# 最大同时存在的悬赏数量
+	# 范围: 1-20
+	maxBounties = 6
+
+[difficulty]
+	# 悬赏难度倍率
+	# 范围: 0.5-3.0
+	difficultyMultiplier = 1.0
+
+	# 悬赏奖励倍率
+	# 范围: 0.5-3.0
+	rewardMultiplier = 1.0
+
+[tiers]
+	# 启用简单悬赏
+	enableCommon = true
+
+	# 启用普通悬赏
+	enableUncommon = true
+
+	# 启用稀有悬赏
+	enableRare = true
+
+	# 启用史诗悬赏
+	enableEpic = true
+
+	# 启用传说悬赏
+	enableLegendary = false
