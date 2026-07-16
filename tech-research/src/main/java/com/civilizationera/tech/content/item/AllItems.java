@@ -1,4 +1,4 @@
-package com.civilizationera.tech.item;
+package com.civilizationera.tech.content.item;
 
 import com.civilizationera.tech.TechResearch;
 import net.minecraft.world.item.CreativeModeTab;
@@ -9,7 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class TechItems {
+public class AllItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TechResearch.MOD_ID);
 
     public static final RegistryObject<Item> TECH_FRAGMENT = ITEMS.register("tech_fragment",

@@ -1,4 +1,4 @@
-package com.civilizationera.barbarian.trap;
+package com.civilizationera.barbarian.content.trap;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;

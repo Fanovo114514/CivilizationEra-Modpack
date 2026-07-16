@@ -1,4 +1,4 @@
-package com.civilizationera.core.item;
+package com.civilizationera.core.content.item;
 
 import com.civilizationera.core.CivilizationCore;
 import net.minecraft.world.item.CreativeModeTab;
@@ -9,7 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class CoreItems {
+public class AllItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CivilizationCore.MOD_ID);
 
     public static final RegistryObject<Item> EVOLUTION_FRAGMENT = ITEMS.register("evolution_fragment",

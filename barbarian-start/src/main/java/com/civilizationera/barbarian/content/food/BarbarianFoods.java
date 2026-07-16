@@ -1,4 +1,4 @@
-package com.civilizationera.barbarian.food;
+package com.civilizationera.barbarian.content.food;
 
 import net.minecraft.world.food.FoodProperties;
 

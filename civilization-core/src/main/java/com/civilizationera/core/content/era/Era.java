@@ -1,4 +1,4 @@
-package com.civilizationera.core.era;
+package com.civilizationera.core.content.era;
 
 import net.minecraft.resources.ResourceLocation;
 

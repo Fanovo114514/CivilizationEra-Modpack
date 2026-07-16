@@ -1,7 +1,7 @@
-package com.civilizationera.tech.research;
+package com.civilizationera.tech.content.research;
 
-import com.civilizationera.core.era.Era;
-import com.civilizationera.faction.faction.FactionType;
+import com.civilizationera.core.content.era.Era;
+import com.civilizationera.faction.content.faction.FactionType;
 
 import java.util.*;
 

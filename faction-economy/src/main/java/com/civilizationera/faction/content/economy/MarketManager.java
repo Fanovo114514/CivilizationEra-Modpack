@@ -1,4 +1,4 @@
-package com.civilizationera.faction.economy;
+package com.civilizationera.faction.content.economy;
 
 import java.util.HashMap;
 import java.util.Map;

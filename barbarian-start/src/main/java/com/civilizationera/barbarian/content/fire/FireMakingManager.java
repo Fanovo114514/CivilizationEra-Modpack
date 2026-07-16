@@ -1,4 +1,4 @@
-package com.civilizationera.barbarian.fire;
+package com.civilizationera.barbarian.content.fire;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;

@@ -1,9 +1,9 @@
-package com.civilizationera.core.era;
+package com.civilizationera.core.content.era;
 
-import net.minecraft.world.entity.player.Player;
+import com.civilizationera.core.api.CivilizationEraAPI;
 import net.minecraftforge.common.MinecraftForge;
 
-public class EraManager {
+public class EraManager implements CivilizationEraAPI {
     private static Era currentEra = Era.PRIMITIVE_WILDERNESS;
     private static EraManager instance;
 

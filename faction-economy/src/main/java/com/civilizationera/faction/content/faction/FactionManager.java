@@ -1,4 +1,4 @@
-package com.civilizationera.faction.faction;
+package com.civilizationera.faction.content.faction;
 
 import java.util.EnumMap;
 import java.util.Map;
