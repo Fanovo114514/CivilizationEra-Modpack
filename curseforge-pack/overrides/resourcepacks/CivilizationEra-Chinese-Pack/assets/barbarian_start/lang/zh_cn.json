@@ -1,0 +1,12 @@
+{
+  "itemGroup.barbarian_start.barbarian_tab": "蛮荒开局",
+  "item.barbarian_start.flint_striker": "燧石打火器",
+  "item.barbarian_start.primitive_trap": "原始陷阱",
+  "item.barbarian_start.stone_club": "石棒",
+  "item.barbarian_start.raw_meat_on_stick": "生肉串",
+  "item.barbarian_start.cooked_meat_on_stick": "烤肉串",
+  "message.barbarian_start.fire_success": "成功生火！",
+  "message.barbarian_start.fire_failed_rain": "下雨了，无法生火",
+  "message.barbarian_start.fire_failed": "生火失败，再试一次",
+  "message.barbarian_start.trap_triggered": "陷阱被触发！"
+}

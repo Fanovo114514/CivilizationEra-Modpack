@@ -1,0 +1,39 @@
+# ============================================================
+# Mekanism 通用机械配置
+# ============================================================
+
+[general]
+	# 机器能耗倍率
+	# 范围: 0.25-4.0
+	energyUsageMultiplier = 1.0
+
+	# 机器产出倍率
+	# 范围: 0.5-4.0
+	outputMultiplier = 1.0
+
+	# 矿物处理倍率
+	# 范围: 2-10
+	oreProcessingMultiplier = 5
+
+[worldgen]
+	# 生成铜矿
+	generateCopper = true
+	# 生成锡矿
+	generateTin = true
+	# 生成锇矿
+	generateOsmium = true
+	# 生成铀矿
+	generateUranium = true
+	# 生成氟石
+	generateFluorite = true
+	# 生成立方氧化锆
+	generateZircon = false
+	# 生成盐
+	generateSalt = true
+
+[client]
+	# 启用发光效果
+	enableGlowEffects = true
+	# 全息投影显示距离
+	# 范围: 1-64
+	hudDistance = 32

@@ -1,0 +1,168 @@
+{
+  "title": "第五纪元：蒸汽",
+  "description": "蒸汽动力的发明开启了工业革命的序幕。传送带、分拣机、蒸汽锻压机...自动化的时代来临了。工业财团成为时代的宠儿。",
+  "icon": "minecraft:furnace",
+  "order_index": 4,
+  "quests": [
+    {
+      "id": "steam_1",
+      "title": "齿轮转动",
+      "description": "制作你的第一个机械动力齿轮。",
+      "icon": "create:cogwheel",
+      "x": 0.0,
+      "y": 0.0,
+      "tasks": [
+        {
+          "type": "item",
+          "item": "create:cogwheel",
+          "count": 10
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "create:andesite_alloy",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": "steam_2",
+      "title": "传送带",
+      "description": "建造传送带系统。",
+      "icon": "create:belt",
+      "x": 1.0,
+      "y": 0.0,
+      "dependencies": ["steam_1"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "create:belt",
+          "count": 20
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "create:mechanical_piston",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "steam_3",
+      "title": "蒸汽机车",
+      "description": "建造蒸汽火车。",
+      "icon": "create:steam_whistle",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": ["steam_2"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "create:train_casing",
+          "count": 5
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "create:track",
+          "count": 100
+        }
+      ]
+    },
+    {
+      "id": "steam_4",
+      "title": "自动熔炼",
+      "description": "建造全自动熔炉生产线。",
+      "icon": "ironfurnaces:iron_furnace",
+      "x": 0.0,
+      "y": 1.0,
+      "dependencies": ["steam_1"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "ironfurnaces:iron_furnace",
+          "count": 3
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "pipez:item_pipe",
+          "count": 20
+        }
+      ]
+    },
+    {
+      "id": "steam_5",
+      "title": "日产50铁",
+      "description": "建造铁锭自动生产线，日产50个。",
+      "icon": "minecraft:iron_block",
+      "x": 1.0,
+      "y": 1.0,
+      "dependencies": ["steam_3", "steam_4"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:iron_ingot",
+          "count": 50
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "create:mechanical_drill",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "steam_6",
+      "title": "工业巨头",
+      "description": "加入工业财团，获得更多技术。",
+      "icon": "minecraft:blast_furnace",
+      "x": 2.0,
+      "y": 1.0,
+      "dependencies": ["steam_5"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:emerald_block",
+          "count": 3
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "tech_research:tech_fragment",
+          "count": 20
+        }
+      ]
+    },
+    {
+      "id": "steam_era_unlock",
+      "title": "进入电气时代",
+      "description": "收集足够的进化碎片，解锁电气时代！",
+      "icon": "minecraft:redstone",
+      "x": 1.0,
+      "y": 2.0,
+      "dependencies": ["steam_6"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "civilization_core:evolution_fragment",
+          "count": 200
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "mekanism:basic_control_circuit",
+          "count": 5
+        }
+      ]
+    }
+  ]
+}

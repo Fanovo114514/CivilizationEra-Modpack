@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "default_season": 0,
+  "seasons": [
+    {
+      "name": "春季",
+      "duration": 30,
+      "temperature_modifier": 0.0,
+      "rain_modifier": 1.2
+    },
+    {
+      "name": "夏季",
+      "duration": 30,
+      "temperature_modifier": 0.3,
+      "rain_modifier": 0.8
+    },
+    {
+      "name": "秋季",
+      "duration": 30,
+      "temperature_modifier": 0.0,
+      "rain_modifier": 1.0
+    },
+    {
+      "name": "冬季",
+      "duration": 30,
+      "temperature_modifier": -0.5,
+      "rain_modifier": 0.5,
+      "snow": true
+    }
+  ],
+  "season_tropical_multiplier": 0.5,
+  "season_cold_multiplier": 1.5,
+  "day_time_season": false,
+  "use_world_time": true,
+  "enable_seasonal_effects": true,
+  "enable_crops_in_winter": false,
+  "enable_trees_in_winter": true,
+  "enable_seasonal_colors": true,
+  "enable_seasonal_sounds": true
+}

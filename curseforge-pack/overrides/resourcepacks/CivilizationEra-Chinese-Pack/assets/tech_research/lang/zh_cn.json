@@ -1,0 +1,22 @@
+{
+  "itemGroup.tech_research.tech_tab": "科技研究",
+  "item.tech_research.tech_fragment": "科技碎片",
+  "item.tech_research.blueprint": "蓝图",
+  "item.tech_research.research_table": "研究台",
+  "tech.basic_fire": "基础生火",
+  "tech.wooden_tools": "木制工具",
+  "tech.primitive_smelting": "原始冶炼",
+  "tech.basic_farming": "基础农耕",
+  "tech.copper_smelting": "铜器冶炼",
+  "tech.bronze_smithing": "青铜锻造",
+  "tech.iron_smelting": "铁器冶炼",
+  "tech.steam_power": "蒸汽动力",
+  "tech.electricity_basics": "电力基础",
+  "tech.computing": "计算技术",
+  "tech.rocket_science": "火箭科学",
+  "tech.research": "研究",
+  "tech.cost": "消耗：%d 科技碎片",
+  "tech.unlocked": "已解锁",
+  "tech.locked": "未解锁",
+  "tech.prerequisites": "前置科技"
+}

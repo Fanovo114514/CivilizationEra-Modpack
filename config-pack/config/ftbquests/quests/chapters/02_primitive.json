@@ -1,0 +1,149 @@
+{
+  "title": "第二纪元：原始",
+  "description": "你学会了制作基础工具，建立了简陋的庇护所。原始部落开始出现，交易和交流成为可能。",
+  "icon": "minecraft:crafting_table",
+  "order_index": 1,
+  "quests": [
+    {
+      "id": "primitive_1",
+      "title": "木制工具",
+      "description": "制作一套木制工具。",
+      "icon": "minecraft:wooden_pickaxe",
+      "x": 0.0,
+      "y": 0.0,
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:wooden_pickaxe",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:wooden_axe",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:coal",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": "primitive_2",
+      "title": "熔炉时代",
+      "description": "建造熔炉，学会冶炼。",
+      "icon": "minecraft:furnace",
+      "x": 1.0,
+      "y": 0.0,
+      "dependencies": ["primitive_1"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:furnace",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:iron_ore",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "primitive_3",
+      "title": "简易庇护所",
+      "description": "建造一个简单的房子来保护自己。",
+      "icon": "minecraft:oak_planks",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": ["primitive_2"],
+      "tasks": [
+        {
+          "type": "location",
+          "structure": "minecraft:village"
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:bed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "primitive_4",
+      "title": "陷阱大师",
+      "description": "制作陷阱来捕获猎物。",
+      "icon": "minecraft:tripwire_hook",
+      "x": 0.0,
+      "y": 1.0,
+      "dependencies": ["primitive_1"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "barbarian_start:primitive_trap",
+          "count": 3
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:string",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "id": "primitive_5",
+      "title": "变异兽猎人",
+      "description": "击杀变异生物，获取更多进化碎片。",
+      "icon": "minecraft:bone",
+      "x": 1.0,
+      "y": 1.0,
+      "dependencies": ["primitive_3", "primitive_4"],
+      "tasks": [
+        {
+          "type": "kill",
+          "entity": "minecraft:skeleton",
+          "count": 10
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "civilization_core:evolution_fragment",
+          "count": 15
+        }
+      ]
+    },
+    {
+      "id": "primitive_era_unlock",
+      "title": "进入农耕时代",
+      "description": "收集足够的进化碎片，解锁农耕时代！",
+      "icon": "minecraft:wheat",
+      "x": 2.0,
+      "y": 1.0,
+      "dependencies": ["primitive_5"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "civilization_core:evolution_fragment",
+          "count": 20
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:wheat_seeds",
+          "count": 10
+        }
+      ]
+    }
+  ]
+}

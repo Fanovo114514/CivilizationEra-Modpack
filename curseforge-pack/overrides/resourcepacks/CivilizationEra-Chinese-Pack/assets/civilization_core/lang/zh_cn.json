@@ -1,0 +1,19 @@
+{
+  "itemGroup.civilization_core.civilization_tab": "文明纪元",
+  "item.civilization_core.evolution_fragment": "进化碎片",
+  "item.civilization_core.copper_coin": "铜币",
+  "item.civilization_core.silver_coin": "银币",
+  "item.civilization_core.gold_coin": "金币",
+  "era.civilization_core.primitive_wilderness": "蛮荒",
+  "era.civilization_core.primitive": "原始",
+  "era.civilization_core.agricultural": "农耕",
+  "era.civilization_core.iron": "铁器",
+  "era.civilization_core.steam": "蒸汽",
+  "era.civilization_core.electric": "电气",
+  "era.civilization_core.information": "信息",
+  "era.civilization_core.interstellar": "星际",
+  "message.civilization_core.era_unlock": "恭喜进入 %s 时代！",
+  "message.civilization_core.evolution_fragment": "获得 %d 个进化碎片",
+  "message.civilization_core.welcome": "欢迎来到文明纪元！你现在处于蛮荒时代。",
+  "message.civilization_core.hint": "收集进化碎片来解锁新的纪元！"
+}

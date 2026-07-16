@@ -1,0 +1,25 @@
+# ============================================================
+# 农夫乐事配置
+# ============================================================
+
+[general]
+	# 食物腐烂
+	enable_rot = false
+	# 食物腐烂速度（天）
+	rot_time = 7
+
+[crops]
+	# 作物生长速度倍率
+	# 范围: 0.5-3.0
+	growth_speed = 1.0
+
+	# 野生作物生成
+	enable_wild_crops = true
+
+[compatibility]
+	# 与 Farmer's Respite 兼容
+	enable_farmers_respite = true
+	# 与 Delightful 兼容
+	enable_delightful = true
+	# 与 Veggies Delight 兼容
+	enable_veggies_delight = true

@@ -1,0 +1,33 @@
+# ============================================================
+# Create 机械动力配置
+# ============================================================
+
+[general]
+	# 应力系统
+	enableStress = true
+	# 应力容量倍率
+	# 范围: 0.5-10.0
+	stressCapacityMultiplier = 1.0
+	# 应力影响倍率
+	# 范围: 0.5-10.0
+	stressImpactMultiplier = 1.0
+
+[worldgen]
+	# 生成铜矿
+	generateCopper = true
+	# 生成锌矿
+	generateZinc = true
+	# 生成安德锌矿
+	generateAndesite = true
+
+[client]
+	# 渲染距离
+	# 范围: 16-128
+	renderDistance = 64
+
+	# 启用粒子效果
+	enableParticles = true
+
+[recipes]
+	# 启用所有配方
+	enableAllRecipes = true
