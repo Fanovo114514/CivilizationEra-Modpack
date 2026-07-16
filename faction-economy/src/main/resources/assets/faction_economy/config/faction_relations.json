@@ -1,0 +1,21 @@
+{
+  "reputation": {
+    "min": -100,
+    "max": 100,
+    "opposing_decay_factor": 0.5
+  },
+  "opposing_factions": [
+    ["farmers_alliance", "industrial_consortium"],
+    ["academy", "underground_market"]
+  ],
+  "reputation_levels": [
+    { "level": "EXALTED", "threshold": 80, "display_name": "崇拜" },
+    { "level": "HONORED", "threshold": 60, "display_name": "尊敬" },
+    { "level": "LIKED", "threshold": 40, "display_name": "友善" },
+    { "level": "FRIENDLY", "threshold": 20, "display_name": "友好" },
+    { "level": "NEUTRAL", "threshold": 0, "display_name": "中立" },
+    { "level": "UNFRIENDLY", "threshold": -20, "display_name": "冷淡" },
+    { "level": "HOSTILE", "threshold": -40, "display_name": "敌对" },
+    { "level": "HATED", "threshold": -60, "display_name": "仇恨" }
+  ]
+}

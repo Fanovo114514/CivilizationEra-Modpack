@@ -1,7 +1,6 @@
 package com.civilizationera.core.foundation.capability;
 
 import com.civilizationera.core.CivilizationCore;
-import com.civilizationera.core.api.CivilizationPlayerDataAPI;
 import com.civilizationera.core.content.era.Era;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -29,9 +28,15 @@ public class CapabilityHandler {
         }
     }
 
-    public interface ICivilizationPlayer extends CivilizationPlayerDataAPI {
+    public interface ICivilizationPlayer {
         Era getCurrentEra();
         void setCurrentEra(Era era);
+        int getEvolutionFragments();
+        void addEvolutionFragments(int amount);
+        boolean useEvolutionFragments(int amount);
+        int getCoins();
+        void addCoins(int amount);
+        boolean useCoins(int amount);
         CompoundTag saveNBT();
         void loadNBT(CompoundTag nbt);
     }

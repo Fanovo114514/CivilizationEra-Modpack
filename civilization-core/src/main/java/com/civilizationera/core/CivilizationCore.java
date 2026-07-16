@@ -1,6 +1,5 @@
 package com.civilizationera.core;
 
-import com.civilizationera.core.content.era.EraManager;
 import com.civilizationera.core.content.item.AllItems;
 import com.civilizationera.core.foundation.capability.CapabilityHandler;
 import net.minecraftforge.common.MinecraftForge;
@@ -19,7 +18,6 @@ public class CivilizationCore {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         AllItems.register(modEventBus);
-        EraManager.init();
 
         modEventBus.addListener(CapabilityHandler::registerCapabilities);
         MinecraftForge.EVENT_BUS.register(new CapabilityHandler());

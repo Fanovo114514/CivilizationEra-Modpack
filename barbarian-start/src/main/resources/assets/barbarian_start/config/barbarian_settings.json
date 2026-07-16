@@ -1,0 +1,21 @@
+{
+  "fire_making": {
+    "base_success_rate": 0.3,
+    "dry_bonus": 0.15,
+    "rain_penalty": 0.25,
+    "underground_bonus": 0.1,
+    "nether_auto_ignite": true,
+    "durability_cost": 1,
+    "max_durability": 32
+  },
+  "messages": {
+    "rain_too_wet": "雨太大了，打不着火...",
+    "success": "成功点着了火！",
+    "failure": "没能点着火，再试试..."
+  },
+  "trap": {
+    "spike_damage": 4.0,
+    "bear_trap_damage": 6.0,
+    "bear_trap_slow_duration": 60
+  }
+}
