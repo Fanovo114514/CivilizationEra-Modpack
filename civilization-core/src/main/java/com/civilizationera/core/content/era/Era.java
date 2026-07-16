@@ -3,14 +3,14 @@ package com.civilizationera.core.content.era;
 import net.minecraft.resources.ResourceLocation;
 
 public enum Era {
-    PRIMITIVE_WILDERNESS(0, "primitive_wilderness", "蛮荒"),
-    PRIMITIVE(1, "primitive", "原始"),
-    AGRICULTURAL(2, "agricultural", "农耕"),
-    IRON(3, "iron", "铁器"),
-    STEAM(4, "steam", "蒸汽"),
-    ELECTRIC(5, "electric", "电气"),
-    INFORMATION(6, "information", "信息"),
-    INTERSTELLAR(7, "interstellar", "星际");
+    PRIMITIVE_WILDERNESS(0, "primitive_wilderness", "蛮荒时代"),
+    STONE_AGE(1, "stone_age", "石器时代"),
+    BRONZE_AGE(2, "bronze_age", "青铜时代"),
+    IRON_AGE(3, "iron_age", "铁器时代"),
+    STEAM_REVOLUTION(4, "steam_revolution", "蒸汽革命"),
+    ELECTRIC_REVOLUTION(5, "electric_revolution", "电气革命"),
+    INFORMATION_REVOLUTION(6, "information_revolution", "信息革命"),
+    STARFARER(7, "starfarer", "星际远征");
 
     private final int index;
     private final String name;
