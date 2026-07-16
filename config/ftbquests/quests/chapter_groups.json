@@ -1,0 +1,16 @@
+{
+  "title": "文明纪元",
+  "description": "从野人开始，经历八个纪元，见证文明的诞生与发展",
+  "default_quest_shape": "rectangle",
+  "default_quest_size": [1.0, 1.0],
+  "default_quest_dependencies": [],
+  "default_reward": {
+    "item": "minecraft:air",
+    "count": 0
+  },
+  "default_task": {
+    "type": "item",
+    "item": "minecraft:air",
+    "count": 0
+  }
+}

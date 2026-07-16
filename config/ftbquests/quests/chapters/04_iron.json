@@ -1,0 +1,182 @@
+{
+  "title": "第四纪元：铁器",
+  "description": "铁器的普及带来了生产力的飞跃。矿车和马车改变了运输方式，城墙和城堡守护着文明的果实。各大势力纷纷登场。",
+  "icon": "minecraft:iron_ingot",
+  "order_index": 3,
+  "quests": [
+    {
+      "id": "iron_1",
+      "title": "铁器革命",
+      "description": "制作一套铁制工具。",
+      "icon": "minecraft:iron_pickaxe",
+      "x": 0.0,
+      "y": 0.0,
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:iron_pickaxe",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:iron_axe",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:iron_sword",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:anvil",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "iron_2",
+      "title": "钢铁冶炼",
+      "description": "冶炼大量铁锭。",
+      "icon": "minecraft:blast_furnace",
+      "x": 1.0,
+      "y": 0.0,
+      "dependencies": ["iron_1"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:iron_ingot",
+          "count": 50
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:iron_block",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": "iron_3",
+      "title": "铁路运输",
+      "description": "建造一条铁路。",
+      "icon": "minecraft:rail",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": ["iron_2"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:rail",
+          "count": 50
+        },
+        {
+          "type": "item",
+          "item": "minecraft:minecart",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:powered_rail",
+          "count": 20
+        }
+      ]
+    },
+    {
+      "id": "iron_4",
+      "title": "铜墙铁壁",
+      "description": "建造坚固的城墙。",
+      "icon": "minecraft:stone_bricks",
+      "x": 0.0,
+      "y": 1.0,
+      "dependencies": ["iron_1"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:stone_bricks",
+          "count": 100
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:iron_door",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "iron_5",
+      "title": "十大建筑",
+      "description": "建造包含10栋建筑的城镇。",
+      "icon": "minecraft:house",
+      "x": 1.0,
+      "y": 1.0,
+      "dependencies": ["iron_3", "iron_4"],
+      "tasks": [
+        {
+          "type": "location",
+          "structure": "minecraft:village"
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:bell",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "iron_6",
+      "title": "势力纷争",
+      "description": "与各大势力建立联系。",
+      "icon": "minecraft:emerald_block",
+      "x": 2.0,
+      "y": 1.0,
+      "dependencies": ["iron_5"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:emerald",
+          "count": 20
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "civilization_core:gold_coin",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "id": "iron_era_unlock",
+      "title": "进入蒸汽时代",
+      "description": "收集足够的进化碎片，解锁蒸汽时代！",
+      "icon": "minecraft:furnace",
+      "x": 1.0,
+      "y": 2.0,
+      "dependencies": ["iron_6"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "civilization_core:evolution_fragment",
+          "count": 100
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:hopper",
+          "count": 5
+        }
+      ]
+    }
+  ]
+}

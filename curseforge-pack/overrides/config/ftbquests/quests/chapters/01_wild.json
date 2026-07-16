@@ -1,0 +1,122 @@
+{
+  "title": "第一纪元：蛮荒",
+  "description": "你是一个野人，在这片危险的土地上挣扎求生。学会使用最简单的工具，生火取暖，是你活下去的唯一希望。",
+  "icon": "minecraft:grass_block",
+  "order_index": 0,
+  "quests": [
+    {
+      "id": "wild_survival_1",
+      "title": "初来乍到",
+      "description": "收集一些木头，这是文明的起点。",
+      "icon": "minecraft:oak_log",
+      "x": 0.0,
+      "y": 0.0,
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:oak_log",
+          "count": 5
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:apple",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "wild_survival_2",
+      "title": "石器时代",
+      "description": "采集一些石头，尝试用它们制作工具。",
+      "icon": "minecraft:stone",
+      "x": 1.0,
+      "y": 0.0,
+      "dependencies": ["wild_survival_1"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:cobblestone",
+          "count": 10
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:bread",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "wild_survival_3",
+      "title": "学会生火",
+      "description": "火是文明的象征。用燧石和铁锭（或木棍）尝试生火！",
+      "icon": "minecraft:campfire",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": ["wild_survival_2"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:flint",
+          "count": 2
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:torch",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "id": "wild_survival_4",
+      "title": "猎人",
+      "description": "击杀一些怪物，获取进化碎片。",
+      "icon": "minecraft:bow",
+      "x": 1.0,
+      "y": 1.0,
+      "dependencies": ["wild_survival_3"],
+      "tasks": [
+        {
+          "type": "kill",
+          "entity": "minecraft:zombie",
+          "count": 5
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "civilization_core:evolution_fragment",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": "wild_era_unlock",
+      "title": "进入原始时代",
+      "description": "收集足够的进化碎片，解锁原始时代！",
+      "icon": "minecraft:crafting_table",
+      "x": 2.0,
+      "y": 1.0,
+      "dependencies": ["wild_survival_4"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "civilization_core:evolution_fragment",
+          "count": 5
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:crafting_table",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,523 @@
+{
+  "name": "文明纪元 (Civilization Era)",
+  "version": "1.0.0",
+  "author": "CivilizationEra Team",
+  "description": "从野人开始，经历八个纪元，见证文明的诞生与发展。融合自动化闯关、碎片化科技树、经济驱动、势力博弈的大型整合包。",
+  "minecraftVersion": "1.20.1",
+  "modLoader": "forge",
+  "forgeVersion": "47.3.0",
+  "totalMods": 63,
+  "platforms": ["PC", "Mobile"],
+  "categories": ["adventure", "tech", "magic", "worldgen"],
+  "mods": [
+    {
+      "id": "ftb-quests",
+      "name": "FTB Quests",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "基础框架层"
+    },
+    {
+      "id": "ftb-quests-ui-overhaul",
+      "name": "FTB Quests UI Overhaul",
+      "version": "",
+      "side": "client",
+      "required": true,
+      "category": "基础框架层"
+    },
+    {
+      "id": "jei",
+      "name": "Just Enough Items",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "基础框架层"
+    },
+    {
+      "id": "jade",
+      "name": "Jade",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "基础框架层"
+    },
+    {
+      "id": "kubejs",
+      "name": "KubeJS",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "基础框架层"
+    },
+    {
+      "id": "cloth-config",
+      "name": "Cloth Config",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "基础框架层"
+    },
+    {
+      "id": "xaeros-minimap",
+      "name": "Xaero's Minimap",
+      "version": "",
+      "side": "client",
+      "required": true,
+      "category": "基础框架层"
+    },
+    {
+      "id": "xaeros-world-map",
+      "name": "Xaero's World Map",
+      "version": "",
+      "side": "client",
+      "required": true,
+      "category": "基础框架层"
+    },
+    {
+      "id": "inventory-profiles-next",
+      "name": "Inventory Profiles Next",
+      "version": "",
+      "side": "client",
+      "required": true,
+      "category": "基础框架层"
+    },
+    {
+      "id": "controlling",
+      "name": "Controlling",
+      "version": "",
+      "side": "client",
+      "required": true,
+      "category": "基础框架层"
+    },
+    {
+      "id": "mouse-tweaks",
+      "name": "Mouse Tweaks",
+      "version": "",
+      "side": "client",
+      "required": true,
+      "category": "基础框架层"
+    },
+    {
+      "id": "embeddium",
+      "name": "Embeddium",
+      "version": "",
+      "side": "client",
+      "required": true,
+      "category": "优化层"
+    },
+    {
+      "id": "ferritecore",
+      "name": "FerriteCore",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "优化层"
+    },
+    {
+      "id": "immediatelyfast",
+      "name": "ImmediatelyFast",
+      "version": "",
+      "side": "client",
+      "required": true,
+      "category": "优化层"
+    },
+    {
+      "id": "modernfix",
+      "name": "ModernFix",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "优化层"
+    },
+    {
+      "id": "terralith",
+      "name": "Terralith",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第1纪元：蛮荒"
+    },
+    {
+      "id": "starter-kit",
+      "name": "Starter Kit",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第2纪元：原始"
+    },
+    {
+      "id": "farmers-delight",
+      "name": "Farmer's Delight",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第3纪元：农耕"
+    },
+    {
+      "id": "farmers-respite",
+      "name": "Farmer's Respite",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第3纪元：农耕"
+    },
+    {
+      "id": "delightful",
+      "name": "Delightful",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第3纪元：农耕"
+    },
+    {
+      "id": "veggies-delight",
+      "name": "Veggies Delight",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第3纪元：农耕"
+    },
+    {
+      "id": "serene-seasons",
+      "name": "Serene Seasons",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第3纪元：农耕"
+    },
+    {
+      "id": "bountiful",
+      "name": "Bountiful",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第3纪元：农耕"
+    },
+    {
+      "id": "villagersplus",
+      "name": "VillagersPlus",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第4纪元：铁器"
+    },
+    {
+      "id": "dynamic-villager-trades",
+      "name": "Dynamic Villager Trades",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第4纪元：铁器"
+    },
+    {
+      "id": "repurposed-structures",
+      "name": "Repurposed Structures (Forge)",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第4纪元：铁器"
+    },
+    {
+      "id": "waystones",
+      "name": "Waystones",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第4纪元：铁器"
+    },
+    {
+      "id": "mowzies-mobs",
+      "name": "Mowzie's Mobs",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第4纪元：铁器"
+    },
+    {
+      "id": "create",
+      "name": "Create",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第5纪元：蒸汽"
+    },
+    {
+      "id": "create-steam-n-rails",
+      "name": "Create: Steam 'n' Rails",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第5纪元：蒸汽"
+    },
+    {
+      "id": "immersive-engineering",
+      "name": "Immersive Engineering",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第5纪元：蒸汽"
+    },
+    {
+      "id": "iron-furnaces",
+      "name": "Iron Furnaces",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第5纪元：蒸汽"
+    },
+    {
+      "id": "pipez",
+      "name": "Pipez",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第5纪元：蒸汽"
+    },
+    {
+      "id": "yungs-better-dungeons",
+      "name": "YUNG's Better Dungeons",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第5纪元：蒸汽"
+    },
+    {
+      "id": "yungs-better-strongholds",
+      "name": "YUNG's Better Strongholds",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第5纪元：蒸汽"
+    },
+    {
+      "id": "mekanism",
+      "name": "Mekanism",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第6纪元：电气"
+    },
+    {
+      "id": "mekanism-generators",
+      "name": "Mekanism Generators",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第6纪元：电气"
+    },
+    {
+      "id": "mekanism-tools",
+      "name": "Mekanism Tools",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第6纪元：电气"
+    },
+    {
+      "id": "mekanism-additions",
+      "name": "Mekanism Additions",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第6纪元：电气"
+    },
+    {
+      "id": "thermal-expansion",
+      "name": "Thermal Expansion",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第6纪元：电气"
+    },
+    {
+      "id": "thermal-dynamics",
+      "name": "Thermal Dynamics",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第6纪元：电气"
+    },
+    {
+      "id": "applied-energistics-2",
+      "name": "Applied Energistics 2",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第6纪元：电气"
+    },
+    {
+      "id": "storage-drawers",
+      "name": "Storage Drawers",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第6纪元：电气"
+    },
+    {
+      "id": "shulker-box-tooltip",
+      "name": "Shulker Box Tooltip",
+      "version": "",
+      "side": "client",
+      "required": true,
+      "category": "第6纪元：电气"
+    },
+    {
+      "id": "logistic-pipes-2",
+      "name": "Logistic Pipes 2",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第7纪元：信息"
+    },
+    {
+      "id": "epic-fight",
+      "name": "Epic Fight",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第7纪元：信息"
+    },
+    {
+      "id": "mutant-monsters",
+      "name": "Mutant Monsters",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第7纪元：信息"
+    },
+    {
+      "id": "alexs-mobs",
+      "name": "Alex's Mobs",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第7纪元：信息"
+    },
+    {
+      "id": "ad-astra",
+      "name": "Ad Astra",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第8纪元：星际"
+    },
+    {
+      "id": "betterend-forge",
+      "name": "BetterEnd Forge (非官方移植)",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第8纪元：星际",
+      "dependencies": ["bclib", "wunderlib"]
+    },
+    {
+      "id": "yungs-better-nether-fortresses",
+      "name": "YUNG's Better Nether Fortresses",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第8纪元：星际"
+    },
+    {
+      "id": "infernal-expansion-redux",
+      "name": "Infernal Expansion Redux",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "第8纪元：星际"
+    },
+    {
+      "id": "geophilic",
+      "name": "Geophilic",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "世界生成与氛围"
+    },
+    {
+      "id": "tectonic",
+      "name": "Tectonic",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "世界生成与氛围"
+    },
+    {
+      "id": "presence-footsteps",
+      "name": "Presence Footsteps",
+      "version": "",
+      "side": "client",
+      "required": true,
+      "category": "世界生成与氛围"
+    },
+    {
+      "id": "sound-physics-remastered",
+      "name": "Sound Physics Remastered",
+      "version": "",
+      "side": "client",
+      "required": true,
+      "category": "世界生成与氛围"
+    },
+    {
+      "id": "ambient-sounds",
+      "name": "Ambient Sounds",
+      "version": "",
+      "side": "client",
+      "required": true,
+      "category": "世界生成与氛围"
+    },
+    {
+      "id": "m-economy",
+      "name": "M Economy",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "经济/势力辅助"
+    },
+    {
+      "id": "factions-proper",
+      "name": "Factions Proper",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "经济/势力辅助"
+    },
+    {
+      "id": "civilization-core",
+      "name": "Civilization Core",
+      "version": "1.0.0",
+      "side": "both",
+      "required": true,
+      "category": "自创模组",
+      "custom": true
+    },
+    {
+      "id": "faction-economy",
+      "name": "Faction & Economy",
+      "version": "1.0.0",
+      "side": "both",
+      "required": true,
+      "category": "自创模组",
+      "custom": true
+    },
+    {
+      "id": "tech-research",
+      "name": "Tech Research",
+      "version": "1.0.0",
+      "side": "both",
+      "required": true,
+      "category": "自创模组",
+      "custom": true
+    },
+    {
+      "id": "barbarian-start",
+      "name": "Barbarian Start",
+      "version": "1.0.0",
+      "side": "both",
+      "required": true,
+      "category": "自创模组",
+      "custom": true
+    }
+  ]
+}

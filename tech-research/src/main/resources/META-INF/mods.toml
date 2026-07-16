@@ -1,0 +1,54 @@
+{
+  "modLoader": "javafml",
+  "loaderVersion": "[47,)",
+  "license": "ARR",
+  "showAsResourcePack": false,
+  "properties": {},
+  "spec": "5.0.0",
+  "dependencies": {
+    "minecraft": [
+      {
+        "versionRange": "[1.20.1]",
+        "status": "required",
+        "order": "none",
+        "side": "both"
+      }
+    ],
+    "forge": [
+      {
+        "versionRange": "[47.3.0,)",
+        "status": "required",
+        "order": "none",
+        "side": "both"
+      }
+    ],
+    "civilization_core": [
+      {
+        "versionRange": "[1.0.0,)",
+        "status": "required",
+        "order": "after",
+        "side": "both"
+      }
+    ]
+  },
+  "mods": [
+    {
+      "modId": "tech_research",
+      "vendor": "CivilizationEra Team",
+      "version": "1.0.0",
+      "displayName": "Tech Research",
+      "description": "文明纪元科技研究模组 - 科技碎片、蓝图系统、研究台、碎片化科技树",
+      "displayTest": "MATCH_VERSION",
+      "logoFile": "logo.png",
+      "updateJSONURL": "",
+      "displayURL": "",
+      "credits": "",
+      "authors": "CivilizationEra Team",
+      "contact": {
+        "homepage": "",
+        "sources": "",
+        "issues": ""
+      }
+    }
+  ]
+}

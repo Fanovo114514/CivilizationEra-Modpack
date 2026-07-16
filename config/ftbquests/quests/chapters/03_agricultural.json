@@ -1,0 +1,173 @@
+{
+  "title": "第三纪元：农耕",
+  "description": "农业的兴起让人类定居下来。铜器和青铜器的出现，标志着文明的真正开始。农庄联盟成为第一个势力。",
+  "icon": "minecraft:wheat",
+  "order_index": 2,
+  "quests": [
+    {
+      "id": "agricultural_1",
+      "title": "农耕起步",
+      "description": "开垦你的第一片农田，种植小麦。",
+      "icon": "minecraft:farmland",
+      "x": 0.0,
+      "y": 0.0,
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:wheat",
+          "count": 10
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:wooden_hoe",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "agricultural_2",
+      "title": "多元种植",
+      "description": "种植胡萝卜和土豆，丰富你的食物来源。",
+      "icon": "minecraft:carrot",
+      "x": 1.0,
+      "y": 0.0,
+      "dependencies": ["agricultural_1"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:carrot",
+          "count": 5
+        },
+        {
+          "type": "item",
+          "item": "minecraft:potato",
+          "count": 5
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:golden_carrot",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "agricultural_3",
+      "title": "粮仓充实",
+      "description": "存储至少100个食物。",
+      "icon": "minecraft:hay_block",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": ["agricultural_2"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:bread",
+          "count": 50
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:chest",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "agricultural_4",
+      "title": "铜器时代",
+      "description": "冶炼铜锭，制作铜制工具。",
+      "icon": "minecraft:copper_ingot",
+      "x": 0.0,
+      "y": 1.0,
+      "dependencies": ["agricultural_1"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:copper_ingot",
+          "count": 10
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:copper_block",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "agricultural_5",
+      "title": "青铜锻造",
+      "description": "掌握青铜冶炼技术。",
+      "icon": "minecraft:gold_ingot",
+      "x": 1.0,
+      "y": 1.0,
+      "dependencies": ["agricultural_4"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:gold_ingot",
+          "count": 5
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:golden_pickaxe",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "agricultural_6",
+      "title": "农庄联盟",
+      "description": "与农庄联盟建立贸易关系。",
+      "icon": "minecraft:emerald",
+      "x": 2.0,
+      "y": 1.0,
+      "dependencies": ["agricultural_3", "agricultural_5"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:emerald",
+          "count": 5
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "civilization_core:copper_coin",
+          "count": 50
+        }
+      ]
+    },
+    {
+      "id": "agricultural_era_unlock",
+      "title": "进入铁器时代",
+      "description": "收集足够的进化碎片，解锁铁器时代！",
+      "icon": "minecraft:iron_ingot",
+      "x": 1.0,
+      "y": 2.0,
+      "dependencies": ["agricultural_6"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "civilization_core:evolution_fragment",
+          "count": 50
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:iron_pickaxe",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "title": "第七纪元：信息",
+  "description": "计算机的发明让自动化达到了新的高度。编程控制的全自动化工厂、远程监控的网络系统...地下黑市也在暗中活跃。",
+  "icon": "minecraft:diamond",
+  "order_index": 6,
+  "quests": [
+    {
+      "id": "info_1",
+      "title": "钻石时代",
+      "description": "制作钻石工具和装备。",
+      "icon": "minecraft:diamond_pickaxe",
+      "x": 0.0,
+      "y": 0.0,
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:diamond_pickaxe",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:diamond_sword",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:diamond_block",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "info_2",
+      "title": "智能物流",
+      "description": "使用物流管道构建智能物品路由系统。",
+      "icon": "logisticspipes:basic_logistics_pipe",
+      "x": 1.0,
+      "y": 0.0,
+      "dependencies": ["info_1"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "logisticspipes:basic_logistics_pipe",
+          "count": 50
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "logisticspipes:request_table",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "info_3",
+      "title": "全自动化",
+      "description": "建造完全自动化的工厂。",
+      "icon": "mekanism:digital_miner",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": ["info_2"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "mekanism:digital_miner",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "mekanism:teleporter",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "info_4",
+      "title": "下界合金",
+      "description": "获得下界合金装备。",
+      "icon": "minecraft:netherite_ingot",
+      "x": 0.0,
+      "y": 1.0,
+      "dependencies": ["info_1"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:netherite_ingot",
+          "count": 5
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:netherite_upgrade_smithing_template",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "info_5",
+      "title": "市场高手",
+      "description": "根据市场行情自动切换生产线。",
+      "icon": "minecraft:emerald_block",
+      "x": 1.0,
+      "y": 1.0,
+      "dependencies": ["info_3", "info_4"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:emerald_block",
+          "count": 10
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "civilization_core:gold_coin",
+          "count": 100
+        }
+      ]
+    },
+    {
+      "id": "info_6",
+      "title": "地下交易",
+      "description": "与地下黑市建立联系。",
+      "icon": "minecraft:ender_chest",
+      "x": 2.0,
+      "y": 1.0,
+      "dependencies": ["info_5"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:ender_pearl",
+          "count": 16
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:ender_chest",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "info_era_unlock",
+      "title": "进入星际时代",
+      "description": "收集足够的进化碎片，解锁星际时代！",
+      "icon": "ad_astra:rocket",
+      "x": 1.0,
+      "y": 2.0,
+      "dependencies": ["info_6"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "civilization_core:evolution_fragment",
+          "count": 800
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "ad_astra:rocket",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+.gradle/
+build/
+run/
+*.jar
+.DS_Store
+eclipse/
+out/

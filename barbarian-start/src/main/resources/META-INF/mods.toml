@@ -1,0 +1,54 @@
+{
+  "modLoader": "javafml",
+  "loaderVersion": "[47,)",
+  "license": "ARR",
+  "showAsResourcePack": false,
+  "properties": {},
+  "spec": "5.0.0",
+  "dependencies": {
+    "minecraft": [
+      {
+        "versionRange": "[1.20.1]",
+        "status": "required",
+        "order": "none",
+        "side": "both"
+      }
+    ],
+    "forge": [
+      {
+        "versionRange": "[47.3.0,)",
+        "status": "required",
+        "order": "none",
+        "side": "both"
+      }
+    ],
+    "civilization_core": [
+      {
+        "versionRange": "[1.0.0,)",
+        "status": "required",
+        "order": "after",
+        "side": "both"
+      }
+    ]
+  },
+  "mods": [
+    {
+      "modId": "barbarian_start",
+      "vendor": "CivilizationEra Team",
+      "version": "1.0.0",
+      "displayName": "Barbarian Start",
+      "description": "文明纪元蛮荒开局模组 - 蛮荒限制、原始部落、陷阱、生火机制",
+      "displayTest": "MATCH_VERSION",
+      "logoFile": "logo.png",
+      "updateJSONURL": "",
+      "displayURL": "",
+      "credits": "",
+      "authors": "CivilizationEra Team",
+      "contact": {
+        "homepage": "",
+        "sources": "",
+        "issues": ""
+      }
+    }
+  ]
+}

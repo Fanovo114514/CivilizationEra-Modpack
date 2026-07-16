@@ -1,0 +1,194 @@
+{
+  "title": "第八纪元：星际",
+  "description": "人类的征程是星辰大海！建造火箭，探索月球、火星和小行星带，在火星上建立自给自足的城市，这是文明的终极目标。",
+  "icon": "ad_astra:rocket",
+  "order_index": 7,
+  "quests": [
+    {
+      "id": "interstellar_1",
+      "title": "火箭科学",
+      "description": "建造你的第一枚火箭。",
+      "icon": "ad_astra:rocket",
+      "x": 0.0,
+      "y": 0.0,
+      "tasks": [
+        {
+          "type": "item",
+          "item": "ad_astra:rocket",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "ad_astra:fuel_canister",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": "interstellar_2",
+      "title": "月球漫步",
+      "description": "登上月球。",
+      "icon": "ad_astra:moon_dust",
+      "x": 1.0,
+      "y": 0.0,
+      "dependencies": ["interstellar_1"],
+      "tasks": [
+        {
+          "type": "location",
+          "dimension": "ad_astra:moon"
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "ad_astra:space_suit",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "interstellar_3",
+      "title": "月球基地",
+      "description": "在月球上建立基地。",
+      "icon": "ad_astra:oxygen_loader",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": ["interstellar_2"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "ad_astra:oxygen_loader",
+          "count": 2
+        },
+        {
+          "type": "item",
+          "item": "ad_astra:oxygen_distributor",
+          "count": 2
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "ad_astra:iron_rocket",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "interstellar_4",
+      "title": "火星之旅",
+      "description": "登上火星。",
+      "icon": "ad_astra:mars_stone",
+      "x": 0.0,
+      "y": 1.0,
+      "dependencies": ["interstellar_3"],
+      "tasks": [
+        {
+          "type": "location",
+          "dimension": "ad_astra:mars"
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "ad_astra:steel_rocket",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "interstellar_5",
+      "title": "太空采矿",
+      "description": "在小行星带采矿。",
+      "icon": "ad_astra:asteroid_stone",
+      "x": 1.0,
+      "y": 1.0,
+      "dependencies": ["interstellar_4"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "ad_astra:asteroid_stone",
+          "count": 64
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "ad_astra:desh_ingot",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "id": "interstellar_6",
+      "title": "先进能源",
+      "description": "研究核聚变和反物质能源。",
+      "icon": "mekanism:fusion_reactor_controller",
+      "x": 2.0,
+      "y": 1.0,
+      "dependencies": ["interstellar_5"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "mekanism:fusion_reactor_controller",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "mekanism:fusion_reactor_frame",
+          "count": 20
+        }
+      ]
+    },
+    {
+      "id": "interstellar_7",
+      "title": "火星城市",
+      "description": "在火星上建立自给自足的城市。",
+      "icon": "minecraft:beacon",
+      "x": 1.0,
+      "y": 2.0,
+      "dependencies": ["interstellar_6"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:beacon",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:nether_star",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "interstellar_final",
+      "title": "文明的终极",
+      "description": "恭喜你完成了文明纪元的全部内容！从蛮荒到星际，你见证了文明的诞生与辉煌。",
+      "icon": "minecraft:dragon_egg",
+      "x": 1.0,
+      "y": 3.0,
+      "dependencies": ["interstellar_7"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:dragon_egg",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:elytra",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

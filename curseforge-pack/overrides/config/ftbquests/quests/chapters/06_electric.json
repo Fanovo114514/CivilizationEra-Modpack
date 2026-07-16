@@ -1,0 +1,178 @@
+{
+  "title": "第六纪元：电气",
+  "description": "电力的发现照亮了整个世界。发电机、电线、电动机...电气革命席卷全球。学术院引领着科技的前沿。",
+  "icon": "minecraft:redstone",
+  "order_index": 5,
+  "quests": [
+    {
+      "id": "electric_1",
+      "title": "电力基础",
+      "description": "建造你的第一台发电机。",
+      "icon": "mekanism:basic_universal_cable",
+      "x": 0.0,
+      "y": 0.0,
+      "tasks": [
+        {
+          "type": "item",
+          "item": "mekanism:basic_universal_cable",
+          "count": 20
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "mekanism:heat_generator",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "electric_2",
+      "title": "矿物处理",
+      "description": "使用机器处理矿物，提高产量。",
+      "icon": "mekanism:enrichment_chamber",
+      "x": 1.0,
+      "y": 0.0,
+      "dependencies": ["electric_1"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "mekanism:enrichment_chamber",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "mekanism:crusher",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "mekanism:factory_basic",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "electric_3",
+      "title": "五倍产矿",
+      "description": "搭建完整的五倍矿物处理线。",
+      "icon": "mekanism:factory_advanced",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": ["electric_2"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "mekanism:factory_advanced",
+          "count": 3
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "mekanism:factory_elite",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "electric_4",
+      "title": "数字存储",
+      "description": "建造AE2数字存储系统。",
+      "icon": "ae2:drive",
+      "x": 0.0,
+      "y": 1.0,
+      "dependencies": ["electric_1"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "ae2:controller",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "ae2:drive",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "ae2:storage_cell_1k",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "electric_5",
+      "title": "五台联动",
+      "description": "电网同时驱动5台机器不跳闸。",
+      "icon": "mekanism:energy_tablet",
+      "x": 1.0,
+      "y": 1.0,
+      "dependencies": ["electric_3", "electric_4"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "mekanism:energy_tablet",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "mekanism:advanced_universal_cable",
+          "count": 20
+        }
+      ]
+    },
+    {
+      "id": "electric_6",
+      "title": "学术新星",
+      "description": "与学术院建立合作关系。",
+      "icon": "minecraft:bookshelf",
+      "x": 2.0,
+      "y": 1.0,
+      "dependencies": ["electric_5"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:book",
+          "count": 20
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "tech_research:blueprint",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "electric_era_unlock",
+      "title": "进入信息时代",
+      "description": "收集足够的进化碎片，解锁信息时代！",
+      "icon": "minecraft:diamond",
+      "x": 1.0,
+      "y": 2.0,
+      "dependencies": ["electric_6"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "civilization_core:evolution_fragment",
+          "count": 400
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:diamond",
+          "count": 10
+        }
+      ]
+    }
+  ]
+}
