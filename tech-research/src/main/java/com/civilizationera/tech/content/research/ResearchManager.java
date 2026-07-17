@@ -55,8 +55,8 @@ public class ResearchManager {
             }
         } catch (Exception ignored) {}
         registerTech(new TechNode("basic_fire", "基础生火", Era.PRIMITIVE_WILDERNESS, 1, Collections.emptyList(), FactionType.FARMERS_ALLIANCE));
-        registerTech(new TechNode("wooden_tools", "木制工具", Era.PRIMITIVE, 3, List.of("basic_fire"), null));
-        registerTech(new TechNode("primitive_smelting", "原始冶炼", Era.PRIMITIVE, 5, List.of("wooden_tools"), null));
+        registerTech(new TechNode("wooden_tools", "木制工具", Era.PRIMITIVE_AGE, 3, List.of("basic_fire"), null));
+        registerTech(new TechNode("primitive_smelting", "原始冶炼", Era.PRIMITIVE_AGE, 5, List.of("wooden_tools"), null));
     }
 
     public void registerTech(TechNode tech) {

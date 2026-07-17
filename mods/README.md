@@ -115,14 +115,13 @@
 | 43 | 抽屉存储 | Storage Drawers | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/storage-drawers) | 大容量同种物品存储 |
 | 44 | 潜影盒预览 | Shulker Box Tooltip | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/shulker-box-tooltip) | 潜影盒内容预览 |
 
-### 💻 第7纪元：信息（4个）
+### 💻 第7纪元：信息（3个）
 
 | 序号 | 模组名称 | 英文名 | 版本要求 | 下载链接 | 说明 |
 |------|----------|--------|----------|----------|------|
 | 45 | 物流管道2 | Logistic Pipes 2 | 1.20.1-最新 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/logistic-pipes-2) | 智能物品路由 |
-| 46 | 史诗战斗 | Epic Fight | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/epic-fight) | 战斗系统增强 |
-| 47 | 变异怪物 | Mutant Monsters | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/mutant-monsters) | 变异Boss |
-| 48 | 亚历克斯的生物 | Alex's Mobs | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/alexs-mobs) | 85+新生物 |
+| 46 | 变异怪物 | Mutant Monsters | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/mutant-monsters) | 变异Boss |
+| 47 | 亚历克斯的生物 | Alex's Mobs | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/alexs-mobs) | 85+新生物 |
 
 ### 🚀 第8纪元：星际（4个）
 
@@ -153,24 +152,29 @@
 | 58 | 经济系统（可选） | 已集成到自创模组 | - | - | 货币系统、ATM、商店等功能已在「势力与经济」模组中实现 |
 | 59 | 势力系统（可选） | 已集成到自创模组 | - | - | 六大势力、声望、外交等功能已在「势力与经济」模组中实现 |
 
-### 🔧 前置模组（重要！）
+### 🔧 前置模组（重要！必须下载）
 
-以下是部分模组需要的前置库，请一并下载：
+以下是各模组需要的前置库，请务必一并下载，否则游戏会崩溃：
 
 | 前置模组 | 被哪些模组依赖 | 下载链接 |
 |----------|----------------|----------|
 | FTB Library | FTB Quests | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ftb-library-forge) |
 | FTB Team Architectury | FTB Quests | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ftb-architectury) |
-| BCLib (NeoForge版) | BetterEnd Forge | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/bclib-neoforge) |
-| WunderLib / WorldWeaver | BetterEnd Forge | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/worldweaver-neoforge) |
+| BCLib (Forge版) | BetterEnd Forge | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/bclib) |
 | GeckoLib | Alex's Mobs, Mowzie's Mobs | [Modrinth](https://modrinth.com/mod/geckolib) |
 | Puzzles Lib | Mutant Monsters | [Modrinth](https://modrinth.com/mod/puzzles-lib) |
 | Bookshelf | 部分模组 | [Modrinth](https://modrinth.com/mod/bookshelf-lib) |
 | Architectury API | 部分模组 | [Modrinth](https://modrinth.com/mod/architectury-api) |
 | Patchouli | 部分模组（指南书） | [Modrinth](https://modrinth.com/mod/patchouli) |
-| Curios API | 部分模组（饰品栏） | [Modrinth](https://modrinth.com/mod/curios) |
+| Curios API | Artifacts, Iron's Spells, Tetra 等饰品类模组 | [Modrinth](https://modrinth.com/mod/curios) |
 | Cloth Config | 多数模组配置界面 | [Modrinth](https://modrinth.com/mod/cloth-config) |
-| Kotlin for Forge | Logistic Pipes 2 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/kotlin-for-forge) |
+| Kotlin for Forge | 部分 Kotlin 写的模组 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/kotlin-for-forge) |
+| Placebo | Apotheosis | [Modrinth](https://modrinth.com/mod/placebo) |
+| Flywheel | Create（部分版本内置） | [Modrinth](https://modrinth.com/mod/flywheel) |
+| Registrate | Create, Mekanism 等 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/registrate) |
+| YUNG's API | YUNG's Better Dungeons/Strongholds/Nether Fortresses | [Modrinth](https://modrinth.com/mod/yungs-api) |
+| JEI | 几乎所有模组（配方查看） | [Modrinth](https://modrinth.com/mod/jei) |
+| Iron's Spells - 法术扩展 | Iron's Spells n Spellbooks | [Modrinth](https://modrinth.com/mod/irons-spells-n-spellbooks) |
 
 ---
 

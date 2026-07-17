@@ -1,3 +1,13 @@
+buildscript {
+    repositories {
+        gradlePluginPortal()
+        maven { url = 'https://maven.minecraftforge.net/' }
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '6.0.+', changing: true
+    }
+}
+
 plugins {
     id 'java'
 }
@@ -29,7 +39,7 @@ subprojects {
     }
 
     minecraft {
-        mappings channel: 'parchment', version: "${parchment_mc_version}-${parchment_version}"
+        mappings channel: 'official', version: "${minecraft_version}"
 
         runs {
             client {

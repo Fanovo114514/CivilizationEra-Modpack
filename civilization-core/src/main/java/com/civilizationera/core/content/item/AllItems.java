@@ -24,13 +24,22 @@ public class AllItems {
     public static final RegistryObject<Item> GOLD_COIN = ITEMS.register("gold_coin",
             () -> new Item(new Item.Properties()));
 
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(ForgeRegistries.CREATIVE_MODE_TAB, CivilizationCore.MOD_ID);
-
-    public static final RegistryObject<CreativeModeTab> CIVILIZATION_TAB = CREATIVE_MODE_TABS.register("civilization_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(EVOLUTION_FRAGMENT.get())).build());
+    public static CreativeModeTab CIVILIZATION_TAB;
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
-        CREATIVE_MODE_TABS.register(eventBus);
+    }
+
+    public static void registerCreativeTab() {
+        CIVILIZATION_TAB = CreativeModeTab.builder()
+                .icon(() -> new ItemStack(EVOLUTION_FRAGMENT.get()))
+                .title(net.minecraft.network.chat.Component.translatable("itemGroup.civilization_core"))
+                .displayItems((parameters, output) -> {
+                    output.accept(EVOLUTION_FRAGMENT.get());
+                    output.accept(COPPER_COIN.get());
+                    output.accept(SILVER_COIN.get());
+                    output.accept(GOLD_COIN.get());
+                })
+                .build();
     }
 }

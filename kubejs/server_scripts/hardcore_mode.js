@@ -3,7 +3,7 @@
 // 理念：蛮荒起步很难，越发展越强
 // ============================================================
 
-const { ERAS, ERA_NAMES, isItemAvailable } = global.CivilizationEra
+const { ERAS, ERA_NAMES } = global.CivilizationEra
 
 // ============================================================
 // 初始能力限制

@@ -1,7 +1,5 @@
 // ============================================================
-// 文明纪元 - 时代锁核心配置（启动脚本 - 仅用于启动阶段注册）
-// 注意：服务器逻辑请使用 server_scripts/era_config.js
-//       客户端逻辑请使用 client_scripts/ 下对应文件
+// 文明纪元 - 时代锁核心配置（服务器端）
 // ============================================================
 
 const ERAS = {
@@ -78,7 +76,6 @@ function unlockBlueprint(player, itemId) {
   return false
 }
 
-// 综合判断物品是否可用：时代解锁 OR 蓝图解锁
 function isItemUnlocked(player, itemId, itemEra) {
   let currentEra = player.persistentData.getInt('civilization_era') || 0
   if (currentEra >= itemEra) return true

@@ -1,6 +1,6 @@
 // ============================================================
-// 文明纪元 - 万物皆可交易：动态价格生成器（启动脚本 - 仅用于启动阶段）
-// 注意：服务器端市场逻辑请使用 server_scripts/market_config.js
+// 文明纪元 - 万物皆可交易：动态价格生成器（服务器端）
+// 定价逻辑：基础价值 × 稀有度系数 × 材质系数 × 特殊加成
 // ============================================================
 
 // ============================================================
@@ -308,7 +308,6 @@ const SPECIAL_PRICES = {
   'minecraft:smithing_table': 20,
   'minecraft:fletching_table': 8,
   'minecraft:cartography_table': 8,
-  'minecraft:loyalty_trident': 250,
   'minecraft:book': 10,
   'minecraft:bookshelf': 15,
   'minecraft:paper': 1,
@@ -340,7 +339,6 @@ const SPECIAL_PRICES = {
   'minecraft:peony': 2,
   'minecraft:tulip': 1,
   'minecraft:wool': 3,
-  'minecraft:string': 1,
   'minecraft:carpet': 1,
   'minecraft:painting': 20,
   'minecraft:item_frame': 10,
@@ -369,7 +367,6 @@ const SPECIAL_PRICES = {
   'minecraft:honey_bottle': 15,
   'minecraft:beehive': 40,
   'minecraft:bee_nest': 60,
-  'minecraft:copper_ore': 5,
   'minecraft:raw_copper': 4,
   'minecraft:raw_iron': 12,
   'minecraft:raw_gold': 30,
@@ -462,19 +459,16 @@ const SPECIAL_PRICES = {
   'minecraft:lingering_potion': 80,
   'minecraft:dragon_breath': 100,
   'minecraft:enchanted_book': 80,
-  'minecraft:book': 10,
   'minecraft:quill': 5,
   'minecraft:ink_sac': 2,
   'minecraft:writeable_book': 8,
   'minecraft:writable_book': 8,
   'minecraft:chain': 5,
-  'minecraft:lantern': 10,
   'minecraft:sweet_berries': 2,
   'minecraft:glow_berries': 3,
   'minecraft:kelp': 0.5,
   'minecraft:dried_kelp': 1,
   'minecraft:bamboo': 1,
-  'minecraft:stick': 0.5,
   'minecraft:lily_pad': 2,
   'minecraft:vine': 0.5,
   'minecraft:fern': 0.3,
@@ -482,7 +476,6 @@ const SPECIAL_PRICES = {
   'minecraft:dead_bush': 0.1,
   'minecraft:cactus': 1,
   'minecraft:sugar_cane': 1,
-  'minecraft:bamboo': 1,
   'minecraft:cocoa_beans': 3,
   'minecraft:brown_mushroom': 1,
   'minecraft:red_mushroom': 1,
@@ -495,7 +488,6 @@ const SPECIAL_PRICES = {
   'minecraft:pumpkin_pie': 8,
   'minecraft:rabbit_foot': 20,
   'minecraft:rabbit_hide': 3,
-  'minecraft:leather': 8,
   'minecraft:iron_horse_armor': 80,
   'minecraft:golden_horse_armor': 100,
   'minecraft:diamond_horse_armor': 250,
@@ -553,7 +545,7 @@ function getCategoryFromId(itemId) {
   if (id.includes('gem')) return 'gem'
   if (id.includes('diamond')) return 'gem'
   if (id.includes('emerald')) return 'gem'
-  if (id.includes('food') || id.includes('cooked') || id.includes('raw_') && !id.includes('iron') && !id.includes('gold') && !id.includes('copper')) return 'food'
+  if (id.includes('food') || id.includes('cooked') || (id.includes('raw_') && !id.includes('iron') && !id.includes('gold') && !id.includes('copper'))) return 'food'
   if (id.includes('bread') || id.includes('apple') || id.includes('steak') || id.includes('chicken') || id.includes('mutton') || id.includes('porkchop') || id.includes('beef')) return 'food'
   if (id.includes('seed') || id.includes('sapling')) return 'nature'
   if (id.includes('potion') || id.includes('enchanted')) return 'magic'

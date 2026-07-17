@@ -276,7 +276,14 @@ PlayerEvents.loggedIn(event => {
 })
 
 // ============================================================
-// 市场命令系统
+// 市场命令系统（聊天命令方式，兼容性更好）
+// 用法：.market list [页数]
+//       .market categories
+//       .market category <分类> [页数]
+//       .market search <关键词>
+//       .market info <物品ID>
+//       .market buy <物品ID> <数量>
+//       .market sell <物品ID> <数量>
 // ============================================================
 
 const CATEGORY_NAMES = {
@@ -294,175 +301,176 @@ const CATEGORY_NAMES = {
   'misc': '杂项'
 }
 
-ServerEvents.commandRegistry(event => {
-  const { commands: Commands, arguments: Arguments } = event
+PlayerEvents.chat(event => {
+  let player = event.player
+  let msg = event.message
 
-  event.register(
-    Commands.literal('market')
-      .then(Commands.literal('list')
-        .executes(ctx => {
-          let player = ctx.source.player
-          let level = player.level
-          let currentEra = player.persistentData.getInt('civilization_era') || 0
-          let items = getAvailableItems(level, currentEra)
+  if (!msg.startsWith('.market')) return
 
-          return showMarketPage(player, items, 1, null, 'price_asc')
-        })
-        .then(Commands.argument('page', Arguments.INTEGER.create(ctx))
-          .executes(ctx => {
-            let player = ctx.source.player
-            let level = player.level
-            let currentEra = player.persistentData.getInt('civilization_era') || 0
-            let page = Arguments.INTEGER.getResult(ctx, 'page')
-            let items = getAvailableItems(level, currentEra)
+  event.cancel()
 
-            return showMarketPage(player, items, page, null, 'price_asc')
-          })
-        )
-      )
-      .then(Commands.literal('category')
-        .then(Commands.argument('cat', Arguments.STRING.create(ctx))
-          .executes(ctx => {
-            let player = ctx.source.player
-            let level = player.level
-            let currentEra = player.persistentData.getInt('civilization_era') || 0
-            let cat = Arguments.STRING.getResult(ctx, 'cat')
-            let items = getAvailableItems(level, currentEra)
-            let filtered = items.filter(i => i.category === cat)
+  let args = msg.trim().split(/\s+/)
+  let cmd = args[1] || 'list'
+  let level = player.level
+  let currentEra = player.persistentData.getInt('civilization_era') || 0
 
-            return showMarketPage(player, filtered, 1, cat, 'price_asc')
-          })
-          .then(Commands.argument('page', Arguments.INTEGER.create(ctx))
-            .executes(ctx => {
-              let player = ctx.source.player
-              let level = player.level
-              let currentEra = player.persistentData.getInt('civilization_era') || 0
-              let cat = Arguments.STRING.getResult(ctx, 'cat')
-              let page = Arguments.INTEGER.getResult(ctx, 'page')
-              let items = getAvailableItems(level, currentEra)
-              let filtered = items.filter(i => i.category === cat)
+  initMarketIfNeeded(level)
 
-              return showMarketPage(player, filtered, page, cat, 'price_asc')
-            })
-          )
-        )
-      )
-      .then(Commands.literal('search')
-        .then(Commands.argument('keyword', Arguments.STRING.create(ctx))
-          .executes(ctx => {
-            let player = ctx.source.player
-            let level = player.level
-            let currentEra = player.persistentData.getInt('civilization_era') || 0
-            let keyword = Arguments.STRING.getResult(ctx, 'keyword').toLowerCase()
-            let items = getAvailableItems(level, currentEra)
-            let filtered = items.filter(i => i.itemId.toLowerCase().includes(keyword))
-
-            return showMarketPage(player, filtered, 1, `搜索:${keyword}`, 'price_asc')
-          })
-        )
-      )
-      .then(Commands.literal('buy')
-        .then(Commands.argument('item', Arguments.STRING.create(ctx))
-          .then(Commands.argument('amount', Arguments.INTEGER.create(ctx))
-            .executes(ctx => {
-              let player = ctx.source.player
-              let itemId = Arguments.STRING.getResult(ctx, 'item')
-              let amount = Arguments.INTEGER.getResult(ctx, 'amount')
-
-              let result = buyItem(player, itemId, amount)
-              player.tell(Text.of(result.message).result.success ? Text.green() : Text.red()))
-
-              return result.success ? 1 : 0
-            })
-          )
-        )
-      )
-      .then(Commands.literal('sell')
-        .then(Commands.argument('item', Arguments.STRING.create(ctx))
-          .then(Commands.argument('amount', Arguments.INTEGER.create(ctx))
-            .executes(ctx => {
-              let player = ctx.source.player
-              let itemId = Arguments.STRING.getResult(ctx, 'item')
-              let amount = Arguments.INTEGER.getResult(ctx, 'amount')
-
-              let result = sellItem(player, itemId, amount)
-              player.tell(Text.of(result.message).result.success ? Text.green() : Text.red()))
-
-              return result.success ? 1 : 0
-            })
-          )
-        )
-      )
-      .then(Commands.literal('categories')
-        .executes(ctx => {
-          let player = ctx.source.player
-          let level = player.level
-          let currentEra = player.persistentData.getInt('civilization_era') || 0
-          let items = getAvailableItems(level, currentEra)
-
-          let catCounts = {}
-          for (let item of items) {
-            catCounts[item.category] = (catCounts[item.category] || 0) + 1
-          }
-
-          player.tell(Text.of('=== 市场分类 ===').gold())
-          for (let [cat, count] of Object.entries(catCounts)) {
-            let catName = CATEGORY_NAMES[cat] || cat
-            player.tell(Text.of(`  ${catName} (${cat}): ${count} 种`).white()
-              .append(Text.of(`  [/market category ${cat}]`).gray()))
-          }
-          player.tell(Text.of(`你的金币：${player.persistentData.getInt('coins') || 0}`).gold())
-
-          return 1
-        })
-      )
-      .then(Commands.literal('info')
-        .then(Commands.argument('item', Arguments.STRING.create(ctx))
-          .executes(ctx => {
-            let player = ctx.source.player
-            let level = player.level
-            let itemId = Arguments.STRING.getResult(ctx, 'item')
-            let info = getItemInfo(level, itemId)
-
-            if (!info) {
-              player.tell(Text.of(`未找到物品：${itemId}`).red())
-              return 0
-            }
-
-            let trendText = info.trend === 'rising' ? '📈 上涨' : info.trend === 'falling' ? '📉 下跌' : '➡️ 稳定'
-            let eraName = ERA_NAMES[info.era] || '蛮荒'
-            let catName = CATEGORY_NAMES[info.category] || info.category
-
-            player.tell(Text.of(`=== ${info.itemId} ===`).gold())
-            player.tell(Text.of(`分类：${catName}`).white())
-            player.tell(Text.of(`时代：${eraName}`).yellow())
-            player.tell(Text.of(`买入价：${info.buy_price} 金币`).aqua())
-            player.tell(Text.of(`卖出价：${info.sell_price} 金币`).green())
-            player.tell(Text.of(`基准价：${info.base_price} 金币`).gray())
-            player.tell(Text.of(`价格比：${info.price_ratio}x`).white())
-            player.tell(Text.of(`趋势：${trendText}`).white())
-            player.tell(Text.of(`库存：${info.inventory}`).gray())
-            player.tell(Text.of(`价格弹性：${info.elasticity}`).gray())
-
-            return 1
-          })
-        )
-      )
-  )
+  switch (cmd) {
+    case 'list':
+    case 'ls': {
+      let page = parseInt(args[2]) || 1
+      let items = getAvailableItems(level, currentEra)
+      showMarketPage(player, items, page, null)
+      break
+    }
+    case 'categories':
+    case 'cats': {
+      let items = getAvailableItems(level, currentEra)
+      let catCounts = {}
+      for (let item of items) {
+        catCounts[item.category] = (catCounts[item.category] || 0) + 1
+      }
+      player.tell(Text.of('=== 市场分类 ===').gold())
+      for (let [cat, count] of Object.entries(catCounts)) {
+        let catName = CATEGORY_NAMES[cat] || cat
+        player.tell(Text.of(`  ${catName} (${cat}): ${count} 种`).white())
+      }
+      player.tell(Text.of('用法：.market category <分类名>').gray())
+      player.tell(Text.of(`你的金币：${player.persistentData.getInt('coins') || 0}`).gold())
+      break
+    }
+    case 'category':
+    case 'cat': {
+      let cat = args[2]
+      if (!cat) {
+        player.tell(Text.of('请指定分类名！用法：.market category <分类>').red())
+        break
+      }
+      let page = parseInt(args[3]) || 1
+      let items = getAvailableItems(level, currentEra)
+      let filtered = items.filter(i => i.category === cat)
+      if (filtered.length === 0) {
+        player.tell(Text.of(`分类「${cat}」没有可交易物品，试试 .market categories 看看有哪些分类`).red())
+        break
+      }
+      let catName = CATEGORY_NAMES[cat] || cat
+      showMarketPage(player, filtered, page, `分类: ${catName}`)
+      break
+    }
+    case 'search':
+    case 'find':
+    case 's': {
+      let keyword = args.slice(2).join(' ').toLowerCase()
+      if (!keyword) {
+        player.tell(Text.of('请输入搜索关键词！用法：.market search <关键词>').red())
+        break
+      }
+      let items = getAvailableItems(level, currentEra)
+      let filtered = items.filter(i => i.itemId.toLowerCase().includes(keyword))
+      if (filtered.length === 0) {
+        player.tell(Text.of(`没有找到包含「${keyword}」的物品`).red())
+        break
+      }
+      showMarketPage(player, filtered, 1, `搜索: ${keyword}`)
+      break
+    }
+    case 'info':
+    case 'i': {
+      let itemId = args[2]
+      if (!itemId) {
+        player.tell(Text.of('请输入物品ID！用法：.market info <物品ID>').red())
+        break
+      }
+      if (!itemId.includes(':')) {
+        itemId = 'minecraft:' + itemId
+      }
+      let info = getItemInfo(level, itemId)
+      if (!info) {
+        player.tell(Text.of(`未找到物品：${itemId}`).red())
+        break
+      }
+      let trendText = info.trend === 'rising' ? '📈 上涨' : info.trend === 'falling' ? '📉 下跌' : '➡️ 稳定'
+      let eraName = ERA_NAMES[info.era] || '蛮荒'
+      let catName = CATEGORY_NAMES[info.category] || info.category
+      player.tell(Text.of(`=== ${info.itemId} ===`).gold())
+      player.tell(Text.of(`分类：${catName}`).white())
+      player.tell(Text.of(`时代：${eraName}`).yellow())
+      player.tell(Text.of(`买入价：${info.buy_price} 金币`).aqua())
+      player.tell(Text.of(`卖出价：${info.sell_price} 金币`).green())
+      player.tell(Text.of(`基准价：${info.base_price} 金币`).gray())
+      player.tell(Text.of(`价格比：${info.price_ratio}x`).white())
+      player.tell(Text.of(`趋势：${trendText}`).white())
+      player.tell(Text.of(`库存：${info.inventory}`).gray())
+      player.tell(Text.of(`价格弹性：${info.elasticity}`).gray())
+      break
+    }
+    case 'buy':
+    case 'b': {
+      let itemId = args[2]
+      let amount = parseInt(args[3]) || 1
+      if (!itemId) {
+        player.tell(Text.of('用法：.market buy <物品ID> <数量>').red())
+        break
+      }
+      if (!itemId.includes(':')) {
+        itemId = 'minecraft:' + itemId
+      }
+      let result = buyItem(player, itemId, amount)
+      if (result.success) {
+        player.tell(Text.of(result.message).green())
+      } else {
+        player.tell(Text.of(result.message).red())
+      }
+      break
+    }
+    case 'sell':
+    case 's': {
+      let itemId = args[2]
+      let amount = parseInt(args[3]) || 1
+      if (!itemId) {
+        player.tell(Text.of('用法：.market sell <物品ID> <数量>').red())
+        break
+      }
+      if (!itemId.includes(':')) {
+        itemId = 'minecraft:' + itemId
+      }
+      let result = sellItem(player, itemId, amount)
+      if (result.success) {
+        player.tell(Text.of(result.message).green())
+      } else {
+        player.tell(Text.of(result.message).red())
+      }
+      break
+    }
+    case 'help':
+    case '?':
+    case 'h': {
+      player.tell(Text.of('=== 市场命令帮助 ===').gold())
+      player.tell(Text.of('.market list [页数] - 浏览所有可交易物品').white())
+      player.tell(Text.of('.market categories - 查看所有分类').white())
+      player.tell(Text.of('.market category <分类> [页数] - 按分类浏览').white())
+      player.tell(Text.of('.market search <关键词> - 搜索物品').white())
+      player.tell(Text.of('.market info <物品ID> - 查看物品详情').white())
+      player.tell(Text.of('.market buy <物品ID> <数量> - 购买物品').green())
+      player.tell(Text.of('.market sell <物品ID> <数量> - 出售物品').red())
+      player.tell(Text.of('.market help - 显示帮助').gray())
+      player.tell(Text.of(`你的金币：${player.persistentData.getInt('coins') || 0}`).gold())
+      break
+    }
+    default:
+      player.tell(Text.of(`未知命令：${cmd}`).red())
+      player.tell(Text.of('输入 .market help 查看帮助').gray())
+  }
 })
 
-function showMarketPage(player, items, page, title, sortBy) {
+function showMarketPage(player, items, page, title) {
   let pageSize = 10
   let totalPages = Math.ceil(items.length / pageSize)
   if (page < 1) page = 1
   if (page > totalPages) page = totalPages
 
-  let sorted = [...items]
-  if (sortBy === 'price_asc') {
-    sorted.sort((a, b) => a.buy_price - b.buy_price)
-  } else if (sortBy === 'price_desc') {
-    sorted.sort((a, b) => b.buy_price - a.buy_price)
-  }
+  let sorted = [...items].sort((a, b) => a.buy_price - b.buy_price)
 
   let start = (page - 1) * pageSize
   let end = start + pageSize
@@ -483,17 +491,13 @@ function showMarketPage(player, items, page, title, sortBy) {
   }
 
   player.tell(Text.of('--------------------').gray())
-  player.tell(Text.of('命令：').white()
-    .append(Text.of('/market list [页数] ').aqua())
-    .append(Text.of('/market category <分类> ').aqua())
-    .append(Text.of('/market search <关键词>').aqua()))
-  player.tell(Text.of('交易：').white()
-    .append(Text.of('/market buy <物品> <数量> ').green())
-    .append(Text.of('/market sell <物品> <数量> ').red())
-    .append(Text.of('/market info <物品>').gray()))
+  player.tell(Text.of('.market list [页数] ').aqua()
+    .append(Text.of('.market cat <分类> ').aqua())
+    .append(Text.of('.market search <词>').aqua()))
+  player.tell(Text.of('.market buy <物品> <数> ').green()
+    .append(Text.of('.market sell <物品> <数> ').red())
+    .append(Text.of('.market info <物品>').gray()))
   player.tell(Text.of(`你的金币：${player.persistentData.getInt('coins') || 0}`).gold())
-
-  return 1
 }
 
 // ============================================================

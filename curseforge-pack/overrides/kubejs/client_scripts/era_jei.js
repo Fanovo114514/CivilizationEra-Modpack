@@ -3,7 +3,27 @@
 // 有蓝图的物品即使时代没到也能显示
 // ============================================================
 
-const { ERAS, ERA_NAMES, isBlueprintUnlocked } = global.CivilizationEra
+const ERAS = {
+  PRIMITIVE_WILDERNESS: 0,
+  PRIMITIVE_AGE: 1,
+  SLASH_AND_BURN: 2,
+  IRON_FORGING: 3,
+  STEAM_REVOLUTION: 4,
+  ELECTRIC_DISCOVERY: 5,
+  INFORMATION_LEGEND: 6,
+  STARFARER: 7
+}
+
+const ERA_NAMES = [
+  '蛮荒纪元',
+  '原始时代',
+  '刀耕火种',
+  '炼造铁器',
+  '蒸汽革命',
+  '发现电气',
+  '信息传说',
+  '星际远征'
+]
 
 // ============================================================
 // 物品-时代对应表（与 server 端保持一致）

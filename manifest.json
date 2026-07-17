@@ -6,10 +6,26 @@
   "minecraftVersion": "1.20.1",
   "modLoader": "forge",
   "forgeVersion": "47.3.0",
-  "totalMods": 63,
+  "totalMods": 72,
   "platforms": ["PC", "Mobile"],
   "categories": ["adventure", "tech", "magic", "worldgen"],
   "mods": [
+    {
+      "id": "ftb-library",
+      "name": "FTB Library",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "前置库"
+    },
+    {
+      "id": "ftb-architectury",
+      "name": "FTB Team Architectury",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "前置库"
+    },
     {
       "id": "ftb-quests",
       "name": "FTB Quests",
@@ -56,7 +72,103 @@
       "version": "",
       "side": "both",
       "required": true,
-      "category": "基础框架层"
+      "category": "前置库"
+    },
+    {
+      "id": "architectury-api",
+      "name": "Architectury API",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "前置库"
+    },
+    {
+      "id": "curios-api",
+      "name": "Curios API",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "前置库"
+    },
+    {
+      "id": "patchouli",
+      "name": "Patchouli",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "前置库"
+    },
+    {
+      "id": "geckolib",
+      "name": "GeckoLib",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "前置库"
+    },
+    {
+      "id": "puzzles-lib",
+      "name": "Puzzles Lib",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "前置库"
+    },
+    {
+      "id": "bookshelf",
+      "name": "Bookshelf",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "前置库"
+    },
+    {
+      "id": "kotlin-for-forge",
+      "name": "Kotlin for Forge",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "前置库"
+    },
+    {
+      "id": "placebo",
+      "name": "Placebo",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "前置库"
+    },
+    {
+      "id": "flywheel",
+      "name": "Flywheel",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "前置库"
+    },
+    {
+      "id": "registrate",
+      "name": "Registrate",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "前置库"
+    },
+    {
+      "id": "yungs-api",
+      "name": "YUNG's API",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "前置库"
+    },
+    {
+      "id": "bclib",
+      "name": "BCLib (Forge)",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "前置库"
     },
     {
       "id": "xaeros-minimap",
@@ -129,6 +241,62 @@
       "side": "both",
       "required": true,
       "category": "优化层"
+    },
+    {
+      "id": "epic-fight",
+      "name": "Epic Fight",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "装备与武器系统"
+    },
+    {
+      "id": "spartan-weaponry",
+      "name": "Spartan Weaponry",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "装备与武器系统"
+    },
+    {
+      "id": "irons-spells-n-spellbooks",
+      "name": "Iron's Spells n Spellbooks",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "装备与武器系统"
+    },
+    {
+      "id": "artifacts",
+      "name": "Artifacts",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "装备与武器系统"
+    },
+    {
+      "id": "tetra",
+      "name": "Tetra",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "装备与武器系统"
+    },
+    {
+      "id": "apotheosis",
+      "name": "Apotheosis",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "装备与武器系统"
+    },
+    {
+      "id": "archers-paradox",
+      "name": "Archer's Paradox",
+      "version": "",
+      "side": "both",
+      "required": true,
+      "category": "装备与武器系统"
     },
     {
       "id": "terralith",
@@ -371,14 +539,6 @@
       "category": "第7纪元：信息"
     },
     {
-      "id": "epic-fight",
-      "name": "Epic Fight",
-      "version": "",
-      "side": "both",
-      "required": true,
-      "category": "第7纪元：信息"
-    },
-    {
       "id": "mutant-monsters",
       "name": "Mutant Monsters",
       "version": "",
@@ -404,12 +564,12 @@
     },
     {
       "id": "betterend-forge",
-      "name": "BetterEnd Forge (非官方移植)",
+      "name": "BetterEnd Forge",
       "version": "",
       "side": "both",
       "required": true,
       "category": "第8纪元：星际",
-      "dependencies": ["bclib", "wunderlib"]
+      "dependencies": ["bclib"]
     },
     {
       "id": "yungs-better-nether-fortresses",
@@ -466,22 +626,6 @@
       "side": "client",
       "required": true,
       "category": "世界生成与氛围"
-    },
-    {
-      "id": "m-economy",
-      "name": "M Economy",
-      "version": "",
-      "side": "both",
-      "required": true,
-      "category": "经济/势力辅助"
-    },
-    {
-      "id": "factions-proper",
-      "name": "Factions Proper",
-      "version": "",
-      "side": "both",
-      "required": true,
-      "category": "经济/势力辅助"
     },
     {
       "id": "civilization-core",
