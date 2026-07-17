@@ -43,6 +43,19 @@
 | 14 | ImmediatelyFast | ImmediatelyFast | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/immediatelyfast) | UI/物品渲染加速 |
 | 15 | ModernFix | ModernFix | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/modernfix) | 综合性能优化 |
 
+### ⚔️ 装备与武器系统（8个）
+
+| 序号 | 模组名称 | 英文名 | 版本要求 | 下载链接 | 说明 | 时代解锁 |
+|------|----------|--------|----------|----------|------|----------|
+| 1 | 史诗战斗 | Epic Fight | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/epic-fight) | 动作战斗系统、技能、闪避、连击 | 炼造铁器 |
+| 2 | 斯巴达武器 | Spartan Weaponry | 1.20.1-最新 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/spartan-weaponry) | 戟、锤、长柄刀、匕首等10+新武器 | 炼造铁器 |
+| 3 | 钢铁护甲套装 | Iron's Spells n Spellbooks | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/irons-spells-n-spellbooks) | 魔法装备、法杖、法术书 | 发现电气 |
+| 4 | 饰品栏 | Curios API | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/curios) | 扩展饰品栏（项链、戒指、护符等） | 刀耕火种 |
+| 5 | 实用饰品 | Curious Elytra + Artifacts | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/artifacts) | 7种神器饰品，各有特殊能力 | 炼造铁器 |
+| 6 | Tetra 模块化工具 | Tetra | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/tetra) | 模块化工具/武器，可自由改造部件 | 蒸汽革命 |
+| 7 | 神秘武器 | Apotheosis | 1.20.1-最新 | [Modrinth](https://modrinth.com/mod/apotheosis) | 装备强化、附魔强化、Boss装备 | 发现电气 |
+| 8 | 弓箭系统 | Archer's Paradox | 1.20.1-最新 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/archers-paradox) | 多种新弓、特殊箭矢、弓技能 | 刀耕火种 |
+
 ### 🏔️ 第1纪元：蛮荒（1个）
 
 | 序号 | 模组名称 | 英文名 | 版本要求 | 下载链接 | 说明 |
