@@ -15,7 +15,7 @@ function registerItemEra(itemId, era) {
   ITEM_ERA_MAP[itemId] = era
 }
 
-// 石器时代
+// 原始时代
 [
   'minecraft:crafting_table',
   'minecraft:furnace',
@@ -28,9 +28,9 @@ function registerItemEra(itemId, era) {
   'minecraft:planks',
   'minecraft:fence',
   'minecraft:fence_gate'
-].forEach(id => registerItemEra(id, ERAS.STONE_AGE))
+].forEach(id => registerItemEra(id, ERAS.PRIMITIVE_AGE))
 
-// 青铜时代
+// 刀耕火种
 [
   'minecraft:stone_pickaxe',
   'minecraft:stone_axe',
@@ -45,9 +45,9 @@ function registerItemEra(itemId, era) {
   'minecraft:brick',
   'minecraft:clay_ball',
   'minecraft:flower_pot'
-].forEach(id => registerItemEra(id, ERAS.BRONZE_AGE))
+].forEach(id => registerItemEra(id, ERAS.SLASH_AND_BURN))
 
-// 铁器时代
+// 炼造铁器
 [
   'minecraft:iron_pickaxe',
   'minecraft:iron_axe',
@@ -66,7 +66,7 @@ function registerItemEra(itemId, era) {
   'minecraft:powered_rail',
   'minecraft:detector_rail',
   'minecraft:activator_rail'
-].forEach(id => registerItemEra(id, ERAS.IRON_AGE))
+].forEach(id => registerItemEra(id, ERAS.IRON_FORGING))
 
 // 蒸汽革命
 [
@@ -87,7 +87,7 @@ function registerItemEra(itemId, era) {
   'minecraft:sticky_piston'
 ].forEach(id => registerItemEra(id, ERAS.STEAM_REVOLUTION))
 
-// 电气革命
+// 发现电气
 [
   'minecraft:diamond_pickaxe',
   'minecraft:diamond_axe',
@@ -110,9 +110,9 @@ function registerItemEra(itemId, era) {
   'minecraft:lapis_block',
   'minecraft:lapis_ore',
   'minecraft:deepslate_lapis_ore'
-].forEach(id => registerItemEra(id, ERAS.ELECTRIC_REVOLUTION))
+].forEach(id => registerItemEra(id, ERAS.ELECTRIC_DISCOVERY))
 
-// 信息革命
+// 信息传说
 [
   'minecraft:netherite_pickaxe',
   'minecraft:netherite_axe',
@@ -127,7 +127,7 @@ function registerItemEra(itemId, era) {
   'minecraft:conduit',
   'minecraft:ender_eye',
   'minecraft:ender_pearl'
-].forEach(id => registerItemEra(id, ERAS.INFORMATION_REVOLUTION))
+].forEach(id => registerItemEra(id, ERAS.INFORMATION_LEGEND))
 
 // 星际远征
 [
@@ -171,7 +171,7 @@ JEIAdditionEvents.hideCategories(event => {
   if (currentEra < ERAS.STEAM_REVOLUTION) {
     try { event.hide('create:mechanical_crafting') } catch (e) {}
   }
-  if (currentEra < ERAS.ELECTRIC_REVOLUTION) {
+  if (currentEra < ERAS.ELECTRIC_DISCOVERY) {
     try { event.hide('mekanism:enriching') } catch (e) {}
     try { event.hide('mekanism:crushing') } catch (e) {}
     try { event.hide('thermal:pulverizer') } catch (e) {}

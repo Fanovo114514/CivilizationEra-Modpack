@@ -6,13 +6,13 @@
       "era": "primitive_wilderness",
       "fragment_cost": 1,
       "prerequisites": [],
-      "faction": "farmers_alliance",
+      "faction": "farmers_union",
       "description": "最原始的取火技术"
     },
     {
       "id": "wooden_tools",
       "display_name": "木制工具",
-      "era": "primitive",
+      "era": "primitive_age",
       "fragment_cost": 3,
       "prerequisites": ["basic_fire"],
       "faction": null,
@@ -21,7 +21,7 @@
     {
       "id": "primitive_smelting",
       "display_name": "原始冶炼",
-      "era": "primitive",
+      "era": "primitive_age",
       "fragment_cost": 5,
       "prerequisites": ["wooden_tools"],
       "faction": null,
@@ -30,16 +30,16 @@
     {
       "id": "basic_farming",
       "display_name": "基础农耕",
-      "era": "agricultural",
+      "era": "slash_and_burn",
       "fragment_cost": 5,
       "prerequisites": ["primitive_smelting"],
-      "faction": "farmers_alliance",
-      "description": "开启农业文明"
+      "faction": "farmers_union",
+      "description": "刀耕火种，开启农业文明"
     },
     {
       "id": "copper_smelting",
       "display_name": "铜器冶炼",
-      "era": "agricultural",
+      "era": "slash_and_burn",
       "fragment_cost": 8,
       "prerequisites": ["basic_farming"],
       "faction": "miners_guild",
@@ -48,7 +48,7 @@
     {
       "id": "bronze_smithing",
       "display_name": "青铜锻造",
-      "era": "agricultural",
+      "era": "slash_and_burn",
       "fragment_cost": 12,
       "prerequisites": ["copper_smelting"],
       "faction": "miners_guild",
@@ -57,16 +57,16 @@
     {
       "id": "iron_smelting",
       "display_name": "铁器冶炼",
-      "era": "iron",
+      "era": "iron_forging",
       "fragment_cost": 15,
       "prerequisites": ["bronze_smithing"],
       "faction": "industrial_consortium",
-      "description": "铁器时代的开端"
+      "description": "炼造铁器时代的开端"
     },
     {
       "id": "steam_power",
       "display_name": "蒸汽动力",
-      "era": "steam",
+      "era": "steam_revolution",
       "fragment_cost": 30,
       "prerequisites": ["iron_smelting"],
       "faction": "industrial_consortium",
@@ -75,29 +75,29 @@
     {
       "id": "electricity_basics",
       "display_name": "电力基础",
-      "era": "electric",
+      "era": "electric_discovery",
       "fragment_cost": 50,
       "prerequisites": ["steam_power"],
       "faction": "academy",
-      "description": "电气时代的敲门砖"
+      "description": "发现电气时代的敲门砖"
     },
     {
       "id": "computing",
       "display_name": "计算技术",
-      "era": "information",
+      "era": "information_legend",
       "fragment_cost": 80,
       "prerequisites": ["electricity_basics"],
       "faction": "academy",
-      "description": "二进制与计算机"
+      "description": "二进制与计算机，信息传说的基石"
     },
     {
       "id": "rocket_science",
       "display_name": "火箭科学",
-      "era": "interstellar",
+      "era": "starfarer",
       "fragment_cost": 150,
       "prerequisites": ["computing"],
       "faction": "industrial_consortium",
-      "description": "迈向星辰大海"
+      "description": "星际远征，迈向星辰大海"
     }
   ]
 }

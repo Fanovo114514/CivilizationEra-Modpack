@@ -4,23 +4,23 @@
 
 const ERAS = {
   PRIMITIVE_WILDERNESS: 0,
-  STONE_AGE: 1,
-  BRONZE_AGE: 2,
-  IRON_AGE: 3,
+  PRIMITIVE_AGE: 1,
+  SLASH_AND_BURN: 2,
+  IRON_FORGING: 3,
   STEAM_REVOLUTION: 4,
-  ELECTRIC_REVOLUTION: 5,
-  INFORMATION_REVOLUTION: 6,
+  ELECTRIC_DISCOVERY: 5,
+  INFORMATION_LEGEND: 6,
   STARFARER: 7
 }
 
 const ERA_NAMES = [
-  '蛮荒时代',
-  '石器时代',
-  '青铜时代',
-  '铁器时代',
+  '蛮荒纪元',
+  '原始时代',
+  '刀耕火种',
+  '炼造铁器',
   '蒸汽革命',
-  '电气革命',
-  '信息革命',
+  '发现电气',
+  '信息传说',
   '星际远征'
 ]
 
