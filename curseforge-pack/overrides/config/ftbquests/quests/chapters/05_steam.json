@@ -28,12 +28,35 @@
     },
     {
       "id": "steam_2",
-      "title": "传送带",
-      "description": "建造传送带系统。",
-      "icon": "create:belt",
+      "title": "安山岩合金",
+      "description": "制作安山岩合金，机械动力的基础材料。",
+      "icon": "create:andesite_alloy",
       "x": 1.0,
       "y": 0.0,
       "dependencies": ["steam_1"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "create:andesite_alloy",
+          "count": 20
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "create:shaft",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "id": "steam_3",
+      "title": "传送带",
+      "description": "建造传送带系统。",
+      "icon": "create:belt",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": ["steam_2"],
       "tasks": [
         {
           "type": "item",
@@ -50,18 +73,240 @@
       ]
     },
     {
-      "id": "steam_3",
+      "id": "steam_4",
+      "title": "机械手",
+      "description": "制作机械臂，实现物品自动转移。",
+      "icon": "create:mechanical_arm",
+      "x": 3.0,
+      "y": 0.0,
+      "dependencies": ["steam_3"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "create:mechanical_arm",
+          "count": 2
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "create:chest_mixin_application",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "steam_5",
+      "title": "高级熔炉",
+      "description": "建造铁熔炉，更快地冶炼矿物。",
+      "icon": "ironfurnaces:iron_furnace",
+      "x": 0.0,
+      "y": 1.0,
+      "dependencies": ["steam_1"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "ironfurnaces:iron_furnace",
+          "count": 2
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "ironfurnaces:gold_furnace",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "steam_6",
+      "title": "钻石熔炉",
+      "description": "制作钻石熔炉，冶炼速度大幅提升。",
+      "icon": "ironfurnaces:diamond_furnace",
+      "x": 1.0,
+      "y": 1.0,
+      "dependencies": ["steam_5"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "ironfurnaces:diamond_furnace",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "ironfurnaces:obsidian_furnace",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "steam_7",
+      "title": "物品管道",
+      "description": "使用Pipez构建物品传输系统。",
+      "icon": "pipez:item_pipe",
+      "x": 2.0,
+      "y": 1.0,
+      "dependencies": ["steam_4"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "pipez:item_pipe",
+          "count": 30
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "pipez:basic_item_pipe",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "id": "steam_8",
+      "title": "流体管道",
+      "description": "构建流体传输网络。",
+      "icon": "pipez:fluid_pipe",
+      "x": 3.0,
+      "y": 1.0,
+      "dependencies": ["steam_7"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "pipez:fluid_pipe",
+          "count": 20
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:bucket",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": "steam_9",
+      "title": "自动农场",
+      "description": "建造全自动农作物农场。",
+      "icon": "create:mechanical_harvester",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": ["steam_3"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "create:mechanical_harvester",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "create:mechanical_plough",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "create:seed",
+          "count": 32
+        }
+      ]
+    },
+    {
+      "id": "steam_10",
+      "title": "机械钻头",
+      "description": "制作机械钻头，实现自动化采矿。",
+      "icon": "create:mechanical_drill",
+      "x": 1.0,
+      "y": 2.0,
+      "dependencies": ["steam_9"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "create:mechanical_drill",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "create:minecart_contraption",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "steam_11",
+      "title": "浸入工程基础",
+      "description": "开始学习Immersive Engineering。",
+      "icon": "immersiveengineering:hammer",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": ["steam_6"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "immersiveengineering:hammer",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:manual",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "immersiveengineering:concrete",
+          "count": 20
+        }
+      ]
+    },
+    {
+      "id": "steam_12",
+      "title": "皮带轮动力",
+      "description": "建造皮带轮动力传输系统。",
+      "icon": "immersiveengineering:wooden_device0",
+      "x": 3.0,
+      "y": 2.0,
+      "dependencies": ["steam_11"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "immersiveengineering:wooden_device0",
+          "count": 4
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "immersiveengineering:waterwheel",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "steam_13",
       "title": "蒸汽机车",
       "description": "建造蒸汽火车。",
       "icon": "create:steam_whistle",
-      "x": 2.0,
-      "y": 0.0,
-      "dependencies": ["steam_2"],
+      "x": 0.0,
+      "y": 3.0,
+      "dependencies": ["steam_10"],
       "tasks": [
         {
           "type": "item",
           "item": "create:train_casing",
           "count": 5
+        },
+        {
+          "type": "item",
+          "item": "create:steam_engine",
+          "count": 1
         }
       ],
       "rewards": [
@@ -73,71 +318,94 @@
       ]
     },
     {
-      "id": "steam_4",
-      "title": "自动熔炼",
-      "description": "建造全自动熔炉生产线。",
-      "icon": "ironfurnaces:iron_furnace",
-      "x": 0.0,
-      "y": 1.0,
-      "dependencies": ["steam_1"],
+      "id": "steam_14",
+      "title": "铁路网络",
+      "description": "建造连接各地的铁路网络。",
+      "icon": "create:track",
+      "x": 1.0,
+      "y": 3.0,
+      "dependencies": ["steam_13"],
       "tasks": [
         {
           "type": "item",
-          "item": "ironfurnaces:iron_furnace",
-          "count": 3
+          "item": "create:track",
+          "count": 200
         }
       ],
       "rewards": [
         {
           "type": "item",
-          "item": "pipez:item_pipe",
-          "count": 20
+          "item": "create:train_station",
+          "count": 2
         }
       ]
     },
     {
-      "id": "steam_5",
-      "title": "日产50铁",
-      "description": "建造铁锭自动生产线，日产50个。",
+      "id": "steam_15",
+      "title": "斗轮挖掘机",
+      "description": "建造大型斗轮挖掘机。",
+      "icon": "immersiveengineering:metal_device1",
+      "x": 2.0,
+      "y": 3.0,
+      "dependencies": ["steam_12"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "immersiveengineering:metal_device1",
+          "count": 8
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "immersiveengineering:capacitor_lv",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "steam_16",
+      "title": "日产百铁",
+      "description": "建造铁锭自动生产线，日产百铁。",
       "icon": "minecraft:iron_block",
-      "x": 1.0,
-      "y": 1.0,
-      "dependencies": ["steam_3", "steam_4"],
+      "x": 3.0,
+      "y": 3.0,
+      "dependencies": ["steam_14", "steam_15"],
       "tasks": [
         {
           "type": "item",
           "item": "minecraft:iron_ingot",
-          "count": 50
+          "count": 100
         }
       ],
       "rewards": [
         {
           "type": "item",
-          "item": "create:mechanical_drill",
-          "count": 1
+          "item": "minecraft:iron_block",
+          "count": 10
         }
       ]
     },
     {
-      "id": "steam_6",
+      "id": "steam_17",
       "title": "工业巨头",
       "description": "加入工业财团，获得更多技术。",
       "icon": "minecraft:blast_furnace",
-      "x": 2.0,
-      "y": 1.0,
-      "dependencies": ["steam_5"],
+      "x": 1.5,
+      "y": 4.0,
+      "dependencies": ["steam_16"],
       "tasks": [
         {
           "type": "item",
           "item": "minecraft:emerald_block",
-          "count": 3
+          "count": 5
         }
       ],
       "rewards": [
         {
           "type": "item",
           "item": "tech_research:tech_fragment",
-          "count": 20
+          "count": 30
         }
       ]
     },
@@ -146,9 +414,9 @@
       "title": "进入电气时代",
       "description": "收集足够的进化碎片，解锁电气时代！",
       "icon": "minecraft:redstone",
-      "x": 1.0,
-      "y": 2.0,
-      "dependencies": ["steam_6"],
+      "x": 3.0,
+      "y": 4.0,
+      "dependencies": ["steam_17"],
       "tasks": [
         {
           "type": "item",

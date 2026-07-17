@@ -1,6 +1,6 @@
 {
   "title": "第一纪元：蛮荒",
-  "description": "你是一个野人，在这片危险的土地上挣扎求生。学会使用最简单的工具，生火取暖，是你活下去的唯一希望。",
+  "description": "你是一个野人，在这片危险的土地上挣扎求生。学会使用最简单的工具，生火取暖，采集野果，是你活下去的唯一希望。",
   "icon": "minecraft:grass_block",
   "order_index": 0,
   "quests": [
@@ -15,14 +15,14 @@
         {
           "type": "item",
           "item": "minecraft:oak_log",
-          "count": 5
+          "count": 10
         }
       ],
       "rewards": [
         {
           "type": "item",
           "item": "minecraft:apple",
-          "count": 3
+          "count": 5
         }
       ]
     },
@@ -38,52 +38,174 @@
         {
           "type": "item",
           "item": "minecraft:cobblestone",
-          "count": 10
+          "count": 20
         }
       ],
       "rewards": [
         {
           "type": "item",
-          "item": "minecraft:bread",
-          "count": 2
+          "item": "minecraft:stone_pickaxe",
+          "count": 1
         }
       ]
     },
     {
       "id": "wild_survival_3",
+      "title": "野果采集",
+      "description": "农夫乐事为世界增添了许多野生食物。去采集一些野果和蔬菜填饱肚子吧！",
+      "icon": "farmersdelight:cabbage",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": ["wild_survival_1"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "farmersdelight:tomato",
+          "count": 3
+        },
+        {
+          "type": "item",
+          "item": "farmersdelight:cabbage",
+          "count": 2
+        },
+        {
+          "type": "item",
+          "item": "farmersdelight:onion",
+          "count": 3
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "farmersdelight:flint_knife",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "wild_survival_4",
       "title": "学会生火",
       "description": "火是文明的象征。用燧石和铁锭（或木棍）尝试生火！",
       "icon": "minecraft:campfire",
-      "x": 2.0,
+      "x": 3.0,
       "y": 0.0,
       "dependencies": ["wild_survival_2"],
       "tasks": [
         {
           "type": "item",
           "item": "minecraft:flint",
-          "count": 2
+          "count": 3
+        },
+        {
+          "type": "item",
+          "item": "minecraft:campfire",
+          "count": 1
         }
       ],
       "rewards": [
         {
           "type": "item",
           "item": "minecraft:torch",
-          "count": 10
+          "count": 20
         }
       ]
     },
     {
-      "id": "wild_survival_4",
-      "title": "猎人",
-      "description": "击杀一些怪物，获取进化碎片。",
-      "icon": "minecraft:bow",
-      "x": 1.0,
+      "id": "wild_survival_5",
+      "title": "原始猎手",
+      "description": "击杀一些动物获取食物。用燧石刀可以更高效地获取肉和皮革。",
+      "icon": "minecraft:beef",
+      "x": 0.0,
       "y": 1.0,
       "dependencies": ["wild_survival_3"],
       "tasks": [
         {
           "type": "kill",
+          "entity": "minecraft:cow",
+          "count": 3
+        },
+        {
+          "type": "item",
+          "item": "minecraft:leather",
+          "count": 5
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:cooked_beef",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "id": "wild_survival_6",
+      "title": "简易庇护所",
+      "description": "夜幕降临，怪物出没。建造一个简陋的庇护所保护自己。",
+      "icon": "minecraft:oak_planks",
+      "x": 1.0,
+      "y": 1.0,
+      "dependencies": ["wild_survival_4"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:oak_planks",
+          "count": 50
+        },
+        {
+          "type": "item",
+          "item": "minecraft:bed",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:chest",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "wild_survival_7",
+      "title": "农夫乐事：第一餐",
+      "description": "用采集的野生动植物制作一份简单的饭菜。篝火可以烹饪许多食物！",
+      "icon": "farmersdelight:stew_pot",
+      "x": 2.0,
+      "y": 1.0,
+      "dependencies": ["wild_survival_3", "wild_survival_4"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "farmersdelight:beef_stew",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "farmersdelight:straw",
+          "count": 16
+        }
+      ]
+    },
+    {
+      "id": "wild_survival_8",
+      "title": "怪物初遇",
+      "description": "黑暗中潜伏着危险。拿起你的武器，击败几只僵尸证明自己！",
+      "icon": "minecraft:wooden_sword",
+      "x": 3.0,
+      "y": 1.0,
+      "dependencies": ["wild_survival_6"],
+      "tasks": [
+        {
+          "type": "kill",
           "entity": "minecraft:zombie",
+          "count": 10
+        },
+        {
+          "type": "kill",
+          "entity": "minecraft:skeleton",
           "count": 5
         }
       ],
@@ -91,18 +213,101 @@
         {
           "type": "item",
           "item": "civilization_core:evolution_fragment",
-          "count": 5
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "wild_survival_9",
+      "title": "采集达人",
+      "description": "收集各种基础资源：木头、石头、泥土、沙子... 多多益善。",
+      "icon": "minecraft:dirt",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": ["wild_survival_5"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:dirt",
+          "count": 64
+        },
+        {
+          "type": "item",
+          "item": "minecraft:sand",
+          "count": 32
+        },
+        {
+          "type": "item",
+          "item": "minecraft:gravel",
+          "count": 20
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:stone_axe",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "wild_survival_10",
+      "title": "找到村庄",
+      "description": "传说中人类建立了定居点。去寻找一个村庄，看看文明的曙光。",
+      "icon": "minecraft:bell",
+      "x": 1.0,
+      "y": 2.0,
+      "dependencies": ["wild_survival_7", "wild_survival_8"],
+      "tasks": [
+        {
+          "type": "location",
+          "structure": "minecraft:village"
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:emerald",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "wild_survival_11",
+      "title": "燧石工具",
+      "description": "用燧石制作一些基础工具。这比木头耐用多了！",
+      "icon": "barbarian_start:flint_striker",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": ["wild_survival_8"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "barbarian_start:flint_striker",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "barbarian_start:stone_club",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "civilization_core:evolution_fragment",
+          "count": 2
         }
       ]
     },
     {
       "id": "wild_era_unlock",
       "title": "进入原始时代",
-      "description": "收集足够的进化碎片，解锁原始时代！",
+      "description": "收集足够的进化碎片，解锁原始时代！你已经掌握了基础生存技能。",
       "icon": "minecraft:crafting_table",
-      "x": 2.0,
-      "y": 1.0,
-      "dependencies": ["wild_survival_4"],
+      "x": 3.0,
+      "y": 2.0,
+      "dependencies": ["wild_survival_10", "wild_survival_11"],
       "tasks": [
         {
           "type": "item",
@@ -114,6 +319,11 @@
         {
           "type": "item",
           "item": "minecraft:crafting_table",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:furnace",
           "count": 1
         }
       ]

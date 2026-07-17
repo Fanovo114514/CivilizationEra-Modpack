@@ -1,13 +1,13 @@
 {
   "title": "第二纪元：原始",
-  "description": "你学会了制作基础工具，建立了简陋的庇护所。原始部落开始出现，交易和交流成为可能。",
+  "description": "你学会了制作基础工具，建立了简陋的庇护所。原始部落开始出现，交易和交流成为可能。Tetra可以帮助你改造和强化工具。",
   "icon": "minecraft:crafting_table",
   "order_index": 1,
   "quests": [
     {
       "id": "primitive_1",
-      "title": "木制工具",
-      "description": "制作一套木制工具。",
+      "title": "木制工具套装",
+      "description": "制作一整套木制工具，开始你的工匠之路。",
       "icon": "minecraft:wooden_pickaxe",
       "x": 0.0,
       "y": 0.0,
@@ -21,20 +21,30 @@
           "type": "item",
           "item": "minecraft:wooden_axe",
           "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:wooden_sword",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:wooden_shovel",
+          "count": 1
         }
       ],
       "rewards": [
         {
           "type": "item",
           "item": "minecraft:coal",
-          "count": 5
+          "count": 10
         }
       ]
     },
     {
       "id": "primitive_2",
       "title": "熔炉时代",
-      "description": "建造熔炉，学会冶炼。",
+      "description": "建造熔炉，学会冶炼金属。这是文明的一大步！",
       "icon": "minecraft:furnace",
       "x": 1.0,
       "y": 0.0,
@@ -43,44 +53,88 @@
         {
           "type": "item",
           "item": "minecraft:furnace",
-          "count": 1
+          "count": 2
+        },
+        {
+          "type": "item",
+          "item": "minecraft:iron_ingot",
+          "count": 5
         }
       ],
       "rewards": [
         {
           "type": "item",
           "item": "minecraft:iron_ore",
-          "count": 3
+          "count": 5
         }
       ]
     },
     {
       "id": "primitive_3",
-      "title": "简易庇护所",
-      "description": "建造一个简单的房子来保护自己。",
-      "icon": "minecraft:oak_planks",
+      "title": "Tetra：工具改造",
+      "description": "使用Tetra的锻造台来改造你的工具。不同的部件组合会产生不同的效果！",
+      "icon": "tetra:hammer",
       "x": 2.0,
       "y": 0.0,
       "dependencies": ["primitive_2"],
       "tasks": [
         {
-          "type": "location",
-          "structure": "minecraft:village"
+          "type": "item",
+          "item": "tetra:hammer",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "tetra:forging_table",
+          "count": 1
         }
       ],
       "rewards": [
         {
           "type": "item",
-          "item": "minecraft:bed",
-          "count": 1
+          "item": "minecraft:experience_bottle",
+          "count": 5
         }
       ]
     },
     {
       "id": "primitive_4",
-      "title": "陷阱大师",
-      "description": "制作陷阱来捕获猎物。",
-      "icon": "minecraft:tripwire_hook",
+      "title": "原始农业",
+      "description": "收集种子，开垦农田，开始种植农作物。这是定居生活的开始。",
+      "icon": "minecraft:wheat_seeds",
+      "x": 3.0,
+      "y": 0.0,
+      "dependencies": ["primitive_1"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:wheat_seeds",
+          "count": 20
+        },
+        {
+          "type": "item",
+          "item": "farmersdelight:tomato_seeds",
+          "count": 5
+        },
+        {
+          "type": "item",
+          "item": "farmersdelight:cabbage_seeds",
+          "count": 5
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:wooden_hoe",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "primitive_5",
+      "title": "猎人陷阱",
+      "description": "制作陷阱来捕获猎物。比起亲自狩猎，陷阱更加安全高效。",
+      "icon": "barbarian_start:primitive_trap",
       "x": 0.0,
       "y": 1.0,
       "dependencies": ["primitive_1"],
@@ -88,29 +142,166 @@
         {
           "type": "item",
           "item": "barbarian_start:primitive_trap",
-          "count": 3
+          "count": 5
         }
       ],
       "rewards": [
         {
           "type": "item",
           "item": "minecraft:string",
+          "count": 20
+        }
+      ]
+    },
+    {
+      "id": "primitive_6",
+      "title": "石制工具升级",
+      "description": "升级你的工具到石制等级，效率会大大提升！",
+      "icon": "minecraft:stone_pickaxe",
+      "x": 1.0,
+      "y": 1.0,
+      "dependencies": ["primitive_2"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:stone_pickaxe",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:stone_axe",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:stone_sword",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:furnace",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "primitive_7",
+      "title": "农夫乐事：烹饪入门",
+      "description": "学习基础烹饪。用烹饪锅制作简单的炖菜和汤品。",
+      "icon": "farmersdelight:cooking_pot",
+      "x": 2.0,
+      "y": 1.0,
+      "dependencies": ["primitive_4"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "farmersdelight:cooking_pot",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "farmersdelight:vegetable_soup",
+          "count": 3
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "farmersdelight:skillet",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "primitive_8",
+      "title": "简易庇护所",
+      "description": "建造一个更坚固的房子来保护自己。至少要有墙、屋顶、门和床。",
+      "icon": "minecraft:oak_planks",
+      "x": 3.0,
+      "y": 1.0,
+      "dependencies": ["primitive_6"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:oak_planks",
+          "count": 100
+        },
+        {
+          "type": "item",
+          "item": "minecraft:cobblestone",
+          "count": 50
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:chest",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "primitive_9",
+      "title": "皮革装备",
+      "description": "制作一套皮革盔甲。虽然防御不高，但总比没有强。",
+      "icon": "minecraft:leather_chestplate",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": ["primitive_5"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:leather_helmet",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:leather_chestplate",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:leather_leggings",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:leather_boots",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:leather",
           "count": 10
         }
       ]
     },
     {
-      "id": "primitive_5",
-      "title": "变异兽猎人",
-      "description": "击杀变异生物，获取更多进化碎片。",
+      "id": "primitive_10",
+      "title": "夜间守卫",
+      "description": "在夜晚存活下来并击杀怪物。证明你已经不再是那个手无寸铁的野人了。",
       "icon": "minecraft:bone",
       "x": 1.0,
-      "y": 1.0,
-      "dependencies": ["primitive_3", "primitive_4"],
+      "y": 2.0,
+      "dependencies": ["primitive_6", "primitive_9"],
       "tasks": [
         {
           "type": "kill",
+          "entity": "minecraft:zombie",
+          "count": 20
+        },
+        {
+          "type": "kill",
           "entity": "minecraft:skeleton",
+          "count": 15
+        },
+        {
+          "type": "kill",
+          "entity": "minecraft:creeper",
           "count": 10
         }
       ],
@@ -118,18 +309,125 @@
         {
           "type": "item",
           "item": "civilization_core:evolution_fragment",
-          "count": 15
+          "count": 10
+        }
+      ]
+    },
+    {
+      "id": "primitive_11",
+      "title": "村民交易",
+      "description": "找到村庄并与村民进行交易。这是你学习外部世界的开始。",
+      "icon": "minecraft:emerald",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": ["primitive_7", "primitive_8"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:emerald",
+          "count": 10
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:name_tag",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "primitive_12",
+      "title": "Waystone：传送石碑",
+      "description": "发现或制作一个传送石碑，它将成为你旅行的重要枢纽。",
+      "icon": "waystones:waystone",
+      "x": 3.0,
+      "y": 2.0,
+      "dependencies": ["primitive_11"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "waystones:waystone",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "waystones:warp_stone",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "primitive_13",
+      "title": "洞穴探险",
+      "description": "深入地下洞穴，探索矿藏和危险。小心里面的怪物！",
+      "icon": "minecraft:torch",
+      "x": 0.0,
+      "y": 3.0,
+      "dependencies": ["primitive_10"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:iron_ore",
+          "count": 20
+        },
+        {
+          "type": "item",
+          "item": "minecraft:coal",
+          "count": 30
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:iron_pickaxe",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "primitive_14",
+      "title": "畜牧养殖",
+      "description": "驯养动物，建立你的牧场。牛、羊、猪、鸡... 越多越好！",
+      "icon": "minecraft:hay_block",
+      "x": 1.0,
+      "y": 3.0,
+      "dependencies": ["primitive_4"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:hay_block",
+          "count": 10
+        },
+        {
+          "type": "item",
+          "item": "minecraft:wool",
+          "count": 16
+        },
+        {
+          "type": "item",
+          "item": "minecraft:egg",
+          "count": 16
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "farmersdelight:rope",
+          "count": 10
         }
       ]
     },
     {
       "id": "primitive_era_unlock",
       "title": "进入农耕时代",
-      "description": "收集足够的进化碎片，解锁农耕时代！",
+      "description": "收集足够的进化碎片，解锁农耕时代！农业革命即将开始。",
       "icon": "minecraft:wheat",
       "x": 2.0,
-      "y": 1.0,
-      "dependencies": ["primitive_5"],
+      "y": 3.0,
+      "dependencies": ["primitive_12", "primitive_13", "primitive_14"],
       "tasks": [
         {
           "type": "item",
@@ -141,7 +439,12 @@
         {
           "type": "item",
           "item": "minecraft:wheat_seeds",
-          "count": 10
+          "count": 32
+        },
+        {
+          "type": "item",
+          "item": "farmersdelight:stove",
+          "count": 1
         }
       ]
     }

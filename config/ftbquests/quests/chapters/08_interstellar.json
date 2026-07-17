@@ -28,12 +28,50 @@
     },
     {
       "id": "interstellar_2",
-      "title": "月球漫步",
-      "description": "登上月球。",
-      "icon": "ad_astra:moon_dust",
+      "title": "宇航服",
+      "description": "制作太空服，为太空旅行做准备。",
+      "icon": "ad_astra:space_suit",
       "x": 1.0,
       "y": 0.0,
       "dependencies": ["interstellar_1"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "ad_astra:space_suit_helmet",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "ad_astra:space_suit",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "ad_astra:space_suit_pants",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "ad_astra:space_suit_boots",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "ad_astra:oxygen_tank",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "interstellar_3",
+      "title": "月球漫步",
+      "description": "登上月球。",
+      "icon": "ad_astra:moon_dust",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": ["interstellar_2"],
       "tasks": [
         {
           "type": "location",
@@ -43,19 +81,19 @@
       "rewards": [
         {
           "type": "item",
-          "item": "ad_astra:space_suit",
+          "item": "ad_astra:iron_rocket",
           "count": 1
         }
       ]
     },
     {
-      "id": "interstellar_3",
+      "id": "interstellar_4",
       "title": "月球基地",
       "description": "在月球上建立基地。",
       "icon": "ad_astra:oxygen_loader",
-      "x": 2.0,
+      "x": 3.0,
       "y": 0.0,
-      "dependencies": ["interstellar_2"],
+      "dependencies": ["interstellar_3"],
       "tasks": [
         {
           "type": "item",
@@ -71,19 +109,47 @@
       "rewards": [
         {
           "type": "item",
-          "item": "ad_astra:iron_rocket",
+          "item": "ad_astra:steel_rocket",
           "count": 1
         }
       ]
     },
     {
-      "id": "interstellar_4",
+      "id": "interstellar_5",
+      "title": "生命维持",
+      "description": "建立完整的太空生命维持系统。",
+      "icon": "ad_astra:oxygen_gear",
+      "x": 0.0,
+      "y": 1.0,
+      "dependencies": ["interstellar_4"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "ad_astra:oxygen_gear",
+          "count": 2
+        },
+        {
+          "type": "item",
+          "item": "ad_astra:oxygen_tank",
+          "count": 4
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "ad_astra:desh_ingot",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": "interstellar_6",
       "title": "火星之旅",
       "description": "登上火星。",
       "icon": "ad_astra:mars_stone",
-      "x": 0.0,
+      "x": 1.0,
       "y": 1.0,
-      "dependencies": ["interstellar_3"],
+      "dependencies": ["interstellar_5"],
       "tasks": [
         {
           "type": "location",
@@ -93,19 +159,19 @@
       "rewards": [
         {
           "type": "item",
-          "item": "ad_astra:steel_rocket",
+          "item": "ad_astra:desh_rocket",
           "count": 1
         }
       ]
     },
     {
-      "id": "interstellar_5",
+      "id": "interstellar_7",
       "title": "太空采矿",
       "description": "在小行星带采矿。",
       "icon": "ad_astra:asteroid_stone",
-      "x": 1.0,
+      "x": 2.0,
       "y": 1.0,
-      "dependencies": ["interstellar_4"],
+      "dependencies": ["interstellar_6"],
       "tasks": [
         {
           "type": "item",
@@ -117,46 +183,144 @@
         {
           "type": "item",
           "item": "ad_astra:desh_ingot",
-          "count": 10
+          "count": 15
         }
       ]
     },
     {
-      "id": "interstellar_6",
-      "title": "先进能源",
-      "description": "研究核聚变和反物质能源。",
-      "icon": "mekanism:fusion_reactor_controller",
-      "x": 2.0,
+      "id": "interstellar_8",
+      "title": "金星探索",
+      "description": "探索金星，收集稀有资源。",
+      "icon": "ad_astra:venus_stone",
+      "x": 3.0,
       "y": 1.0,
-      "dependencies": ["interstellar_5"],
+      "dependencies": ["interstellar_7"],
       "tasks": [
         {
-          "type": "item",
-          "item": "mekanism:fusion_reactor_controller",
-          "count": 1
+          "type": "location",
+          "dimension": "ad_astra:venus"
         }
       ],
       "rewards": [
         {
           "type": "item",
-          "item": "mekanism:fusion_reactor_frame",
+          "item": "ad_astra:ostrum_ingot",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "id": "interstellar_9",
+      "title": "水星探险",
+      "description": "登上水星，探索极端环境。",
+      "icon": "ad_astra:mercury_stone",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": ["interstellar_8"],
+      "tasks": [
+        {
+          "type": "location",
+          "dimension": "ad_astra:mercury"
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "ad_astra:calorite_ingot",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "id": "interstellar_10",
+      "title": "末地扩展",
+      "description": "探索BetterEnd的新末地生物群系。",
+      "icon": "betterend:end_stone",
+      "x": 1.0,
+      "y": 2.0,
+      "dependencies": ["interstellar_9"],
+      "tasks": [
+        {
+          "type": "location",
+          "dimension": "minecraft:the_end"
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "betterend:ender_dust",
           "count": 20
         }
       ]
     },
     {
-      "id": "interstellar_7",
+      "id": "interstellar_11",
+      "title": "先进能源",
+      "description": "研究核聚变能源。",
+      "icon": "mekanism:fusion_reactor_controller",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": ["interstellar_10"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "mekanism:fusion_reactor_controller",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "mekanism:fusion_reactor_frame",
+          "count": 20
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "mekanism:ultimate_energy_cube",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "interstellar_12",
+      "title": "地下城探索",
+      "description": "挑战YUNG's Better Dungeons的地下城。",
+      "icon": "minecraft:spawner",
+      "x": 3.0,
+      "y": 2.0,
+      "dependencies": ["interstellar_11"],
+      "tasks": [
+        {
+          "type": "location",
+          "structure": "betterdungeons:better_dungeon"
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:enchanting_table",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "interstellar_13",
       "title": "火星城市",
       "description": "在火星上建立自给自足的城市。",
       "icon": "minecraft:beacon",
-      "x": 1.0,
-      "y": 2.0,
-      "dependencies": ["interstellar_6"],
+      "x": 1.5,
+      "y": 3.0,
+      "dependencies": ["interstellar_12"],
       "tasks": [
         {
           "type": "item",
           "item": "minecraft:beacon",
           "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:iron_block",
+          "count": 64
         }
       ],
       "rewards": [
@@ -172,9 +336,9 @@
       "title": "文明的终极",
       "description": "恭喜你完成了文明纪元的全部内容！从蛮荒到星际，你见证了文明的诞生与辉煌。",
       "icon": "minecraft:dragon_egg",
-      "x": 1.0,
-      "y": 3.0,
-      "dependencies": ["interstellar_7"],
+      "x": 1.5,
+      "y": 4.0,
+      "dependencies": ["interstellar_13"],
       "tasks": [
         {
           "type": "item",

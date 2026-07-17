@@ -33,11 +33,95 @@
     },
     {
       "id": "info_2",
+      "title": "钻石套装",
+      "description": "打造完整的钻石护甲套装。",
+      "icon": "minecraft:diamond_chestplate",
+      "x": 1.0,
+      "y": 0.0,
+      "dependencies": ["info_1"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:diamond_helmet",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:diamond_chestplate",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:diamond_leggings",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:diamond_boots",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:diamond",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "id": "info_3",
+      "title": "神化装备",
+      "description": "使用Apotheosis打造神级装备。",
+      "icon": "apotheosis:mythic_loot",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": ["info_2"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "apotheosis:mythic_loot",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "apotheosis:gem_socket",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "info_4",
+      "title": "宝石进阶",
+      "description": "获取高级宝石，进一步强化装备。",
+      "icon": "apotheosis:rare_gem",
+      "x": 3.0,
+      "y": 0.0,
+      "dependencies": ["info_3"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "apotheosis:rare_gem",
+          "count": 5
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "apotheosis:epic_gem",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "info_5",
       "title": "智能物流",
       "description": "使用物流管道构建智能物品路由系统。",
       "icon": "logisticspipes:basic_logistics_pipe",
-      "x": 1.0,
-      "y": 0.0,
+      "x": 0.0,
+      "y": 1.0,
       "dependencies": ["info_1"],
       "tasks": [
         {
@@ -55,13 +139,41 @@
       ]
     },
     {
-      "id": "info_3",
-      "title": "全自动化",
-      "description": "建造完全自动化的工厂。",
+      "id": "info_6",
+      "title": "请求系统",
+      "description": "搭建物流请求系统，按需获取物品。",
+      "icon": "logisticspipes:request_table",
+      "x": 1.0,
+      "y": 1.0,
+      "dependencies": ["info_5"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "logisticspipes:request_table",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "logisticspipes:provider_pipe",
+          "count": 5
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "logisticspipes:crafting_pipe",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "info_7",
+      "title": "数字采矿机",
+      "description": "建造Mekanism数字采矿机。",
       "icon": "mekanism:digital_miner",
       "x": 2.0,
-      "y": 0.0,
-      "dependencies": ["info_2"],
+      "y": 1.0,
+      "dependencies": ["info_5"],
       "tasks": [
         {
           "type": "item",
@@ -78,18 +190,133 @@
       ]
     },
     {
-      "id": "info_4",
+      "id": "info_8",
+      "title": "量子缠绕",
+      "description": "研究量子传输技术。",
+      "icon": "mekanism:quantum_entangloporter",
+      "x": 3.0,
+      "y": 1.0,
+      "dependencies": ["info_7"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "mekanism:quantum_entangloporter",
+          "count": 2
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "mekanism:ultimate_universal_cable",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "id": "info_9",
+      "title": "珍稀生物",
+      "description": "发现并收集Alex's Mobs的珍稀生物。",
+      "icon": "alexsmobs:kangaroo",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": ["info_2"],
+      "tasks": [
+        {
+          "type": "mob_kill",
+          "mob": "alexsmobs:kangaroo",
+          "count": 3
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "alexsmobs:animal_dictionary",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "info_10",
+      "title": "生物图鉴",
+      "description": "收集更多珍稀生物的掉落物。",
+      "icon": "alexsmobs:animal_dictionary",
+      "x": 1.0,
+      "y": 2.0,
+      "dependencies": ["info_9"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "alexsmobs:animal_dictionary",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:emerald",
+          "count": 20
+        }
+      ]
+    },
+    {
+      "id": "info_11",
+      "title": "变异怪物",
+      "description": "挑战Mutant Monsters的变异Boss。",
+      "icon": "mutantmonsters:mutant_zombie",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": ["info_4"],
+      "tasks": [
+        {
+          "type": "mob_kill",
+          "mob": "mutantmonsters:mutant_zombie",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "mutantmonsters:mutant_skeleton_arm",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "info_12",
+      "title": "高级神器",
+      "description": "收集更强大的Artifacts神器。",
+      "icon": "artifacts:everlasting_beef",
+      "x": 3.0,
+      "y": 2.0,
+      "dependencies": ["info_11"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "artifacts:everlasting_beef",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "artifacts:crystal_heart",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "info_13",
       "title": "下界合金",
       "description": "获得下界合金装备。",
       "icon": "minecraft:netherite_ingot",
       "x": 0.0,
-      "y": 1.0,
-      "dependencies": ["info_1"],
+      "y": 3.0,
+      "dependencies": ["info_10", "info_12"],
       "tasks": [
         {
           "type": "item",
           "item": "minecraft:netherite_ingot",
-          "count": 5
+          "count": 8
         }
       ],
       "rewards": [
@@ -101,48 +328,58 @@
       ]
     },
     {
-      "id": "info_5",
-      "title": "市场高手",
-      "description": "根据市场行情自动切换生产线。",
-      "icon": "minecraft:emerald_block",
-      "x": 1.0,
-      "y": 1.0,
-      "dependencies": ["info_3", "info_4"],
+      "id": "info_14",
+      "title": "下界合金套装",
+      "description": "打造完整的下界合金套装。",
+      "icon": "minecraft:netherite_chestplate",
+      "x": 1.5,
+      "y": 3.0,
+      "dependencies": ["info_13"],
       "tasks": [
         {
           "type": "item",
-          "item": "minecraft:emerald_block",
-          "count": 10
+          "item": "minecraft:netherite_sword",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:netherite_pickaxe",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:netherite_chestplate",
+          "count": 1
         }
       ],
       "rewards": [
         {
           "type": "item",
-          "item": "civilization_core:gold_coin",
-          "count": 100
+          "item": "minecraft:netherite_block",
+          "count": 1
         }
       ]
     },
     {
-      "id": "info_6",
+      "id": "info_15",
       "title": "地下交易",
       "description": "与地下黑市建立联系。",
       "icon": "minecraft:ender_chest",
-      "x": 2.0,
-      "y": 1.0,
-      "dependencies": ["info_5"],
+      "x": 3.0,
+      "y": 3.0,
+      "dependencies": ["info_14"],
       "tasks": [
         {
           "type": "item",
           "item": "minecraft:ender_pearl",
-          "count": 16
+          "count": 32
         }
       ],
       "rewards": [
         {
           "type": "item",
           "item": "minecraft:ender_chest",
-          "count": 1
+          "count": 2
         }
       ]
     },
@@ -151,9 +388,9 @@
       "title": "进入星际时代",
       "description": "收集足够的进化碎片，解锁星际时代！",
       "icon": "ad_astra:rocket",
-      "x": 1.0,
-      "y": 2.0,
-      "dependencies": ["info_6"],
+      "x": 1.5,
+      "y": 4.0,
+      "dependencies": ["info_15"],
       "tasks": [
         {
           "type": "item",

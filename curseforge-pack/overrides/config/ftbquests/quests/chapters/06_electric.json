@@ -28,18 +28,105 @@
     },
     {
       "id": "electric_2",
-      "title": "矿物处理",
-      "description": "使用机器处理矿物，提高产量。",
-      "icon": "mekanism:enrichment_chamber",
+      "title": "热力发电机",
+      "description": "建造热力发电机，提供稳定电力。",
+      "icon": "mekanismgenerators:heat_generator",
       "x": 1.0,
       "y": 0.0,
       "dependencies": ["electric_1"],
       "tasks": [
         {
           "type": "item",
+          "item": "mekanismgenerators:heat_generator",
+          "count": 2
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "mekanism:energy_tablet",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "electric_3",
+      "title": "太阳能发电",
+      "description": "建造太阳能发电机，利用清洁能源。",
+      "icon": "mekanismgenerators:solar_generator",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": ["electric_2"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "mekanismgenerators:solar_generator",
+          "count": 4
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "mekanism:advanced_universal_cable",
+          "count": 20
+        }
+      ]
+    },
+    {
+      "id": "electric_4",
+      "title": "生物发电",
+      "description": "利用生物燃料发电。",
+      "icon": "mekanismgenerators:bio_generator",
+      "x": 3.0,
+      "y": 0.0,
+      "dependencies": ["electric_3"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "mekanismgenerators:bio_generator",
+          "count": 2
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "mekanism:basic_energy_cube",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "electric_5",
+      "title": "矿物富集",
+      "description": "使用富集仓加倍矿物产量。",
+      "icon": "mekanism:enrichment_chamber",
+      "x": 0.0,
+      "y": 1.0,
+      "dependencies": ["electric_1"],
+      "tasks": [
+        {
+          "type": "item",
           "item": "mekanism:enrichment_chamber",
           "count": 1
-        },
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "mekanism:crusher",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "electric_6",
+      "title": "粉碎机",
+      "description": "建造粉碎机，处理矿石。",
+      "icon": "mekanism:crusher",
+      "x": 1.0,
+      "y": 1.0,
+      "dependencies": ["electric_5"],
+      "tasks": [
         {
           "type": "item",
           "item": "mekanism:crusher",
@@ -49,19 +136,70 @@
       "rewards": [
         {
           "type": "item",
-          "item": "mekanism:factory_basic",
+          "item": "mekanism:metallurgic_infuser",
           "count": 1
         }
       ]
     },
     {
-      "id": "electric_3",
+      "id": "electric_7",
+      "title": "冶金灌注",
+      "description": "使用冶金灌注机制作合金。",
+      "icon": "mekanism:metallurgic_infuser",
+      "x": 2.0,
+      "y": 1.0,
+      "dependencies": ["electric_6"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "mekanism:metallurgic_infuser",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "mekanism:pressurized_reaction_chamber",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "electric_8",
+      "title": "化学氧化",
+      "description": "使用化学氧化室处理矿物。",
+      "icon": "mekanism:chemical_oxidizer",
+      "x": 3.0,
+      "y": 1.0,
+      "dependencies": ["electric_7"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "mekanism:chemical_oxidizer",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "mekanism:chemical_injection_chamber",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "mekanism:factory_basic",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "electric_9",
       "title": "五倍产矿",
       "description": "搭建完整的五倍矿物处理线。",
       "icon": "mekanism:factory_advanced",
-      "x": 2.0,
-      "y": 0.0,
-      "dependencies": ["electric_2"],
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": ["electric_8"],
       "tasks": [
         {
           "type": "item",
@@ -78,13 +216,64 @@
       ]
     },
     {
-      "id": "electric_4",
+      "id": "electric_10",
+      "title": "热力膨胀",
+      "description": "开始学习Thermal Expansion。",
+      "icon": "thermal:machine_furnace",
+      "x": 1.0,
+      "y": 2.0,
+      "dependencies": ["electric_5"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "thermal:machine_furnace",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "thermal:machine_pulverizer",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "thermal:fluid_transposer",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "electric_11",
+      "title": "流体转置",
+      "description": "使用流体转置机处理流体。",
+      "icon": "thermal:fluid_transposer",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": ["electric_10"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "thermal:fluid_transposer",
+          "count": 1
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "thermal:duct_energy_basic",
+          "count": 20
+        }
+      ]
+    },
+    {
+      "id": "electric_12",
       "title": "数字存储",
       "description": "建造AE2数字存储系统。",
       "icon": "ae2:drive",
-      "x": 0.0,
-      "y": 1.0,
-      "dependencies": ["electric_1"],
+      "x": 3.0,
+      "y": 2.0,
+      "dependencies": ["electric_4"],
       "tasks": [
         {
           "type": "item",
@@ -106,48 +295,127 @@
       ]
     },
     {
-      "id": "electric_5",
-      "title": "五台联动",
-      "description": "电网同时驱动5台机器不跳闸。",
-      "icon": "mekanism:energy_tablet",
-      "x": 1.0,
-      "y": 1.0,
-      "dependencies": ["electric_3", "electric_4"],
+      "id": "electric_13",
+      "title": "存储终端",
+      "description": "建造ME终端，访问数字存储。",
+      "icon": "ae2:terminal",
+      "x": 0.0,
+      "y": 3.0,
+      "dependencies": ["electric_12"],
       "tasks": [
         {
           "type": "item",
-          "item": "mekanism:energy_tablet",
+          "item": "ae2:terminal",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "ae2:storage_bus",
+          "count": 2
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "ae2:storage_cell_4k",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "electric_14",
+      "title": "抽屉存储",
+      "description": "使用Storage Drawers扩展存储空间。",
+      "icon": "storagedrawers:oak_full_drawers_1",
+      "x": 1.0,
+      "y": 3.0,
+      "dependencies": ["electric_13"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "storagedrawers:oak_full_drawers_2",
+          "count": 4
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "storagedrawers:oak_full_drawers_4",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "electric_15",
+      "title": "自动合成",
+      "description": "使用AE2自动合成系统。",
+      "icon": "ae2:crafting_unit",
+      "x": 2.0,
+      "y": 3.0,
+      "dependencies": ["electric_14"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "ae2:crafting_unit",
+          "count": 4
+        },
+        {
+          "type": "item",
+          "item": "ae2:crafting_accelerator",
+          "count": 2
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "ae2:interface",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "electric_16",
+      "title": "十台联动",
+      "description": "电网同时驱动10台机器不跳闸。",
+      "icon": "mekanism:advanced_energy_cube",
+      "x": 3.0,
+      "y": 3.0,
+      "dependencies": ["electric_9", "electric_15"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "mekanism:advanced_energy_cube",
           "count": 1
         }
       ],
       "rewards": [
         {
           "type": "item",
-          "item": "mekanism:advanced_universal_cable",
+          "item": "mekanism:elite_universal_cable",
           "count": 20
         }
       ]
     },
     {
-      "id": "electric_6",
+      "id": "electric_17",
       "title": "学术新星",
       "description": "与学术院建立合作关系。",
       "icon": "minecraft:bookshelf",
-      "x": 2.0,
-      "y": 1.0,
-      "dependencies": ["electric_5"],
+      "x": 1.5,
+      "y": 4.0,
+      "dependencies": ["electric_16"],
       "tasks": [
         {
           "type": "item",
           "item": "minecraft:book",
-          "count": 20
+          "count": 30
         }
       ],
       "rewards": [
         {
           "type": "item",
           "item": "tech_research:blueprint",
-          "count": 3
+          "count": 5
         }
       ]
     },
@@ -156,9 +424,9 @@
       "title": "进入信息时代",
       "description": "收集足够的进化碎片，解锁信息时代！",
       "icon": "minecraft:diamond",
-      "x": 1.0,
-      "y": 2.0,
-      "dependencies": ["electric_6"],
+      "x": 3.0,
+      "y": 4.0,
+      "dependencies": ["electric_17"],
       "tasks": [
         {
           "type": "item",

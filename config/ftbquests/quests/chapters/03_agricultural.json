@@ -1,13 +1,13 @@
 {
   "title": "第三纪元：农耕",
-  "description": "农业的兴起让人类定居下来。铜器和青铜器的出现，标志着文明的真正开始。农庄联盟成为第一个势力。",
+  "description": "农业的兴起让人类定居下来。铜器和青铜器的出现，标志着文明的真正开始。农夫乐事带来了丰富的烹饪系统，静谧四季让农业更有挑战性。农庄联盟成为第一个势力。",
   "icon": "minecraft:wheat",
   "order_index": 2,
   "quests": [
     {
       "id": "agricultural_1",
       "title": "农耕起步",
-      "description": "开垦你的第一片农田，种植小麦。",
+      "description": "开垦你的第一片农田，种植小麦。农业是文明的基础。",
       "icon": "minecraft:farmland",
       "x": 0.0,
       "y": 0.0,
@@ -15,13 +15,18 @@
         {
           "type": "item",
           "item": "minecraft:wheat",
-          "count": 10
+          "count": 30
+        },
+        {
+          "type": "item",
+          "item": "minecraft:hay_block",
+          "count": 5
         }
       ],
       "rewards": [
         {
           "type": "item",
-          "item": "minecraft:wooden_hoe",
+          "item": "minecraft:stone_hoe",
           "count": 1
         }
       ]
@@ -29,90 +34,186 @@
     {
       "id": "agricultural_2",
       "title": "多元种植",
-      "description": "种植胡萝卜和土豆，丰富你的食物来源。",
-      "icon": "minecraft:carrot",
+      "description": "种植各种农作物，丰富你的食物来源。农夫乐事添加了许多新作物！",
+      "icon": "farmersdelight:tomato",
       "x": 1.0,
       "y": 0.0,
       "dependencies": ["agricultural_1"],
       "tasks": [
         {
           "type": "item",
+          "item": "farmersdelight:tomato",
+          "count": 20
+        },
+        {
+          "type": "item",
+          "item": "farmersdelight:cabbage",
+          "count": 15
+        },
+        {
+          "type": "item",
+          "item": "farmersdelight:onion",
+          "count": 20
+        },
+        {
+          "type": "item",
           "item": "minecraft:carrot",
-          "count": 5
+          "count": 20
         },
         {
           "type": "item",
           "item": "minecraft:potato",
-          "count": 5
+          "count": 20
         }
       ],
       "rewards": [
         {
           "type": "item",
-          "item": "minecraft:golden_carrot",
+          "item": "farmersdelight:golden_knife",
           "count": 1
         }
       ]
     },
     {
       "id": "agricultural_3",
-      "title": "粮仓充实",
-      "description": "存储至少100个食物。",
-      "icon": "minecraft:hay_block",
+      "title": "农夫乐事：烹饪大师",
+      "description": "学习使用炉灶和烹饪锅制作各种美食。不同的食物有不同的效果！",
+      "icon": "farmersdelight:stove",
       "x": 2.0,
       "y": 0.0,
       "dependencies": ["agricultural_2"],
       "tasks": [
         {
           "type": "item",
-          "item": "minecraft:bread",
-          "count": 50
+          "item": "farmersdelight:stove",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "farmersdelight:cooking_pot",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "farmersdelight:skillet",
+          "count": 1
         }
       ],
       "rewards": [
         {
           "type": "item",
-          "item": "minecraft:chest",
-          "count": 3
+          "item": "farmersdelight:cake_slice",
+          "count": 8
         }
       ]
     },
     {
       "id": "agricultural_4",
-      "title": "铜器时代",
-      "description": "冶炼铜锭，制作铜制工具。",
-      "icon": "minecraft:copper_ingot",
+      "title": "静谧四季：春种秋收",
+      "description": "四季变化影响着作物生长。学会根据季节种植合适的作物。",
+      "icon": "sereneseasons:spring_leaves",
+      "x": 3.0,
+      "y": 0.0,
+      "dependencies": ["agricultural_2"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "sereneseasons:seasonal_calendar",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:wheat_seeds",
+          "count": 64
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "farmersdelight:rice_panicle",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "id": "agricultural_5",
+      "title": "粮仓充实",
+      "description": "存储大量食物以备不时之需。建造一个大型仓库。",
+      "icon": "minecraft:hay_block",
       "x": 0.0,
       "y": 1.0,
       "dependencies": ["agricultural_1"],
       "tasks": [
         {
           "type": "item",
-          "item": "minecraft:copper_ingot",
-          "count": 10
+          "item": "minecraft:bread",
+          "count": 64
+        },
+        {
+          "type": "item",
+          "item": "farmersdelight:wheat_dough",
+          "count": 16
+        },
+        {
+          "type": "item",
+          "item": "minecraft:hay_block",
+          "count": 20
         }
       ],
       "rewards": [
         {
           "type": "item",
-          "item": "minecraft:copper_block",
-          "count": 1
+          "item": "minecraft:chest",
+          "count": 5
         }
       ]
     },
     {
-      "id": "agricultural_5",
-      "title": "青铜锻造",
-      "description": "掌握青铜冶炼技术。",
-      "icon": "minecraft:gold_ingot",
+      "id": "agricultural_6",
+      "title": "铜器时代",
+      "description": "冶炼铜锭，制作铜制工具和装备。铜比石器耐用得多！",
+      "icon": "minecraft:copper_ingot",
       "x": 1.0,
       "y": 1.0,
-      "dependencies": ["agricultural_4"],
+      "dependencies": ["agricultural_3"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:copper_ingot",
+          "count": 30
+        },
+        {
+          "type": "item",
+          "item": "minecraft:copper_block",
+          "count": 5
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:lightning_rod",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "agricultural_7",
+      "title": "黄金冶炼",
+      "description": "掌握黄金冶炼技术。黄金不仅是财富的象征，还有许多实用价值。",
+      "icon": "minecraft:gold_ingot",
+      "x": 2.0,
+      "y": 1.0,
+      "dependencies": ["agricultural_6"],
       "tasks": [
         {
           "type": "item",
           "item": "minecraft:gold_ingot",
-          "count": 5
+          "count": 15
+        },
+        {
+          "type": "item",
+          "item": "minecraft:golden_apple",
+          "count": 2
         }
       ],
       "rewards": [
@@ -124,36 +225,305 @@
       ]
     },
     {
-      "id": "agricultural_6",
-      "title": "农庄联盟",
-      "description": "与农庄联盟建立贸易关系。",
-      "icon": "minecraft:emerald",
-      "x": 2.0,
+      "id": "agricultural_8",
+      "title": "Bountiful：赏金任务",
+      "description": "接受赏金任务板上的任务，完成后获得丰厚奖励。这是快速积累财富的好方法！",
+      "icon": "bountiful:bounty_board",
+      "x": 3.0,
       "y": 1.0,
-      "dependencies": ["agricultural_3", "agricultural_5"],
+      "dependencies": ["agricultural_4"],
       "tasks": [
         {
           "type": "item",
+          "item": "bountiful:bounty_board",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "bountiful:bounty",
+          "count": 3
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
           "item": "minecraft:emerald",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "id": "agricultural_9",
+      "title": "畜牧业大亨",
+      "description": "养殖各种动物，建立你的牧场。牛、羊、猪、鸡、马... 越多越好！",
+      "icon": "minecraft:cow_spawn_egg",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": ["agricultural_5"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:leather",
+          "count": 32
+        },
+        {
+          "type": "item",
+          "item": "minecraft:wool",
+          "count": 32
+        },
+        {
+          "type": "item",
+          "item": "minecraft:porkchop",
+          "count": 32
+        },
+        {
+          "type": "item",
+          "item": "minecraft:egg",
+          "count": 32
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:saddle",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "agricultural_10",
+      "title": "农夫乐事：盛宴",
+      "description": "制作各种高级料理。一场盛宴正在等待着你！",
+      "icon": "farmersdelight:roast_chicken",
+      "x": 1.0,
+      "y": 2.0,
+      "dependencies": ["agricultural_3", "agricultural_9"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "farmersdelight:roast_chicken",
+          "count": 2
+        },
+        {
+          "type": "item",
+          "item": "farmersdelight:stuffed_pumpkin",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "farmersdelight:honey_glazed_ham",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "farmersdelight:shepherds_pie",
+          "count": 2
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "farmersdelight:apple_pie",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "agricultural_11",
+      "title": "果树园艺",
+      "description": "种植果树，建立你的果园。不同的水果有不同的用途。",
+      "icon": "minecraft:oak_sapling",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": ["agricultural_2"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:apple",
+          "count": 32
+        },
+        {
+          "type": "item",
+          "item": "minecraft:sweet_berries",
+          "count": 32
+        },
+        {
+          "type": "item",
+          "item": "minecraft:melon_slice",
+          "count": 32
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "farmersdelight:fruit_salad",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "agricultural_12",
+      "title": "蔬菜园",
+      "description": "建立一个专门的蔬菜园。健康饮食从蔬菜开始！",
+      "icon": "farmersdelight:onion",
+      "x": 3.0,
+      "y": 2.0,
+      "dependencies": ["agricultural_11"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "farmersdelight:rice",
+          "count": 32
+        },
+        {
+          "type": "item",
+          "item": "farmersdelight:beetroot_soup",
+          "count": 5
+        },
+        {
+          "type": "item",
+          "item": "farmersdelight:mixed_salad",
           "count": 5
         }
       ],
       "rewards": [
         {
           "type": "item",
+          "item": "farmersdelight:knife",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "agricultural_13",
+      "title": "农庄联盟",
+      "description": "与农庄联盟建立贸易关系。他们控制着大部分的粮食贸易。",
+      "icon": "minecraft:emerald",
+      "x": 0.0,
+      "y": 3.0,
+      "dependencies": ["agricultural_8", "agricultural_10"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:emerald",
+          "count": 20
+        },
+        {
+          "type": "item",
+          "item": "minecraft:wheat",
+          "count": 128
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
           "item": "civilization_core:copper_coin",
+          "count": 100
+        }
+      ]
+    },
+    {
+      "id": "agricultural_14",
+      "title": "矿工工会",
+      "description": "矿工工会正在招募成员。向他们展示你的采矿能力！",
+      "icon": "minecraft:iron_ore",
+      "x": 1.0,
+      "y": 3.0,
+      "dependencies": ["agricultural_7"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:iron_ore",
           "count": 50
+        },
+        {
+          "type": "item",
+          "item": "minecraft:coal",
+          "count": 64
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:iron_pickaxe",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "agricultural_15",
+      "title": "糖和蛋糕",
+      "description": "学习制作糖和蛋糕。甜蜜的生活从这里开始。",
+      "icon": "minecraft:cake",
+      "x": 2.0,
+      "y": 3.0,
+      "dependencies": ["agricultural_11"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:sugar",
+          "count": 32
+        },
+        {
+          "type": "item",
+          "item": "minecraft:cake",
+          "count": 3
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "farmersdelight:chocolate_pie",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "agricultural_16",
+      "title": "装饰作物",
+      "description": "种植花卉和装饰性植物，美化你的家园。",
+      "icon": "minecraft:poppy",
+      "x": 3.0,
+      "y": 3.0,
+      "dependencies": ["agricultural_12"],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:poppy",
+          "count": 16
+        },
+        {
+          "type": "item",
+          "item": "minecraft:dandelion",
+          "count": 16
+        },
+        {
+          "type": "item",
+          "item": "minecraft:blue_orchid",
+          "count": 8
+        },
+        {
+          "type": "item",
+          "item": "farmersdelight:canvas_rug",
+          "count": 4
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:flower_pot",
+          "count": 5
         }
       ]
     },
     {
       "id": "agricultural_era_unlock",
       "title": "进入铁器时代",
-      "description": "收集足够的进化碎片，解锁铁器时代！",
+      "description": "收集足够的进化碎片，解锁铁器时代！铁的普及将带来生产力的飞跃。",
       "icon": "minecraft:iron_ingot",
-      "x": 1.0,
-      "y": 2.0,
-      "dependencies": ["agricultural_6"],
+      "x": 1.5,
+      "y": 4.0,
+      "dependencies": ["agricultural_13", "agricultural_14", "agricultural_16"],
       "tasks": [
         {
           "type": "item",
@@ -165,6 +535,11 @@
         {
           "type": "item",
           "item": "minecraft:iron_pickaxe",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "minecraft:iron_sword",
           "count": 1
         }
       ]
